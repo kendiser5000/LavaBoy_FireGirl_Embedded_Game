@@ -1,0 +1,15 @@
+MC1:
+	Transmit:
+		Send Song Data (0-8)
+		Song_List[9] = {*Theme, *Bullet_Bill, *Jump, *Coin, *Mario_Die, *Button_Pressed, *Special, *Victory, *Land};
+
+	Receiver:
+		Receive Data about which button was pressed (Act Accordingly)
+
+MC2:
+
+	Transmit: 
+		Which Button was Pressed (P, M, S)
+
+	Receiver:
+		REceive which song to play

@@ -1,0 +1,34 @@
+rect: {x, y, w, h, colour}
+LevelRects: {rects[10], size}
+Sprites: {x, y, *bitmap, width, height, cType}
+Bullet: {*image, velocity, direction, reset position, end position, 0}
+mPlatform: {*image, 0, axis, direction, min position, max position, 0, 0, 0}
+Button {*image, *platform it triggers, 0}
+
+LevelX structs: {*x[10], size}
+
+
+//base 
+	Change_Rect(&Levels[0][2].LevelRects->rects[0],   60, 158,  50,    5, RED); 
+	//base color red
+	Change_Rect(&Levels[0][2].LevelRects->rects[1],   0, 158,  128,    6,  BLACK);
+	//plat to seperate level
+	Change_Rect(&Levels[0][2].LevelRects->rects[2],   50, 60,  5,     55, BLACK); 
+	//Blue Button cause headboosted
+	Change_Rect(&Levels[0][2].LevelRects->rects[3],   108, 137,  20,   5, BLUE  ); 
+	//protect red jump
+	Change_Rect(&Levels[0][2].LevelRects->rects[4],   108, 139,  20,   5, BLACK); 
+	//plat to get to button->plat
+	Change_Rect(&Levels[0][2].LevelRects->rects[5],   0, 100,  20,     5, BLACK); 
+	//RED plat with button
+	Change_Rect(&Levels[0][2].LevelRects->rects[6],   65, 80,  63,     5, RED); 
+	//BLACK to protect red plat
+	Change_Rect(&Levels[0][2].LevelRects->rects[7],   65, 82,  63,     3, BLACK);
+	//EXIT plat
+	Change_Rect(&Levels[0][2].LevelRects->rects[8],   90,  30,  40,    5, BLACK);
+	//plat to get to top ->
+	Change_Rect(&Levels[0][2].LevelRects->rects[9],  30,  73,   20,    5, BLACK);
+	//rborder
+	Levels[0][2].LevelRects->rects[10] = RightBorder;
+	
+  Levels[0][2].LevelRects->size = 11;

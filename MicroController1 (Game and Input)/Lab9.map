@@ -1,0 +1,1732 @@
+ARM Linker, 5.03 [Build 76] [MDK-ARM Professional]
+
+==============================================================================
+
+Section Cross References
+
+    startup.o(STACK) refers (Special) to heapauxi.o(.text) for __use_two_region_memory
+    startup.o(HEAP) refers (Special) to heapauxi.o(.text) for __use_two_region_memory
+    startup.o(RESET) refers (Special) to heapauxi.o(.text) for __use_two_region_memory
+    startup.o(RESET) refers to startup.o(STACK) for StackMem
+    startup.o(RESET) refers to lab9.o(i.SysTick_Handler) for SysTick_Handler
+    startup.o(RESET) refers to uart.o(i.UART1_Handler) for UART1_Handler
+    startup.o(RESET) refers to texas.o(.text) for Timer4A_Handler
+    startup.o(RESET) refers to __main.o(!!!main) for __main
+    startup.o(.text) refers (Special) to heapauxi.o(.text) for __use_two_region_memory
+    startup.o(.text) refers to startup.o(HEAP) for HeapMem
+    startup.o(.text) refers to startup.o(STACK) for StackMem
+    print.o(.text) refers to st7735.o(i.ST7735_OutChar) for ST7735_OutChar
+    print.o(.text) refers to st7735.o(i.ST7735_OutString) for ST7735_OutString
+    st7735.o(i.Output_Clear) refers to st7735.o(i.ST7735_FillScreen) for ST7735_FillScreen
+    st7735.o(i.Output_Color) refers to st7735.o(i.ST7735_SetTextColor) for ST7735_SetTextColor
+    st7735.o(i.Output_Init) refers to st7735.o(i.ST7735_InitR) for ST7735_InitR
+    st7735.o(i.Output_Init) refers to st7735.o(i.ST7735_FillScreen) for ST7735_FillScreen
+    st7735.o(i.Output_Off) refers to st7735.o(i.Output_Clear) for Output_Clear
+    st7735.o(i.Output_On) refers to st7735.o(i.Output_Init) for Output_Init
+    st7735.o(i.ST7735_DrawBitmap) refers to st7735.o(i.setAddrWindow) for setAddrWindow
+    st7735.o(i.ST7735_DrawBitmap) refers to lcd.o(.text) for writedata
+    st7735.o(i.ST7735_DrawBitmap) refers to st7735.o(.data) for _width
+    st7735.o(i.ST7735_DrawChar) refers to st7735.o(i.setAddrWindow) for setAddrWindow
+    st7735.o(i.ST7735_DrawChar) refers to st7735.o(i.pushColor) for pushColor
+    st7735.o(i.ST7735_DrawChar) refers to st7735.o(.data) for _width
+    st7735.o(i.ST7735_DrawChar) refers to st7735.o(.constdata) for Font
+    st7735.o(i.ST7735_DrawCharS) refers to st7735.o(i.ST7735_DrawPixel) for ST7735_DrawPixel
+    st7735.o(i.ST7735_DrawCharS) refers to st7735.o(i.ST7735_FillRect) for ST7735_FillRect
+    st7735.o(i.ST7735_DrawCharS) refers to st7735.o(.data) for _width
+    st7735.o(i.ST7735_DrawCharS) refers to st7735.o(.constdata) for Font
+    st7735.o(i.ST7735_DrawFastHLine) refers to st7735.o(i.setAddrWindow) for setAddrWindow
+    st7735.o(i.ST7735_DrawFastHLine) refers to lcd.o(.text) for writedata
+    st7735.o(i.ST7735_DrawFastHLine) refers to st7735.o(.data) for _width
+    st7735.o(i.ST7735_DrawFastVLine) refers to st7735.o(i.setAddrWindow) for setAddrWindow
+    st7735.o(i.ST7735_DrawFastVLine) refers to lcd.o(.text) for writedata
+    st7735.o(i.ST7735_DrawFastVLine) refers to st7735.o(.data) for _width
+    st7735.o(i.ST7735_DrawPixel) refers to st7735.o(i.setAddrWindow) for setAddrWindow
+    st7735.o(i.ST7735_DrawPixel) refers to st7735.o(i.pushColor) for pushColor
+    st7735.o(i.ST7735_DrawPixel) refers to st7735.o(.data) for _width
+    st7735.o(i.ST7735_DrawString) refers to st7735.o(i.ST7735_DrawCharS) for ST7735_DrawCharS
+    st7735.o(i.ST7735_FillRect) refers to st7735.o(i.setAddrWindow) for setAddrWindow
+    st7735.o(i.ST7735_FillRect) refers to lcd.o(.text) for writedata
+    st7735.o(i.ST7735_FillRect) refers to st7735.o(.data) for _width
+    st7735.o(i.ST7735_FillScreen) refers to st7735.o(i.ST7735_FillRect) for ST7735_FillRect
+    st7735.o(i.ST7735_FillScreen) refers to st7735.o(.data) for _height
+    st7735.o(i.ST7735_InitB) refers to st7735.o(i.commonInit) for commonInit
+    st7735.o(i.ST7735_InitB) refers to st7735.o(i.ST7735_SetCursor) for ST7735_SetCursor
+    st7735.o(i.ST7735_InitB) refers to st7735.o(i.ST7735_FillScreen) for ST7735_FillScreen
+    st7735.o(i.ST7735_InitB) refers to st7735.o(.constdata) for Bcmd
+    st7735.o(i.ST7735_InitB) refers to st7735.o(.data) for StTextColor
+    st7735.o(i.ST7735_InitR) refers to st7735.o(i.commonInit) for commonInit
+    st7735.o(i.ST7735_InitR) refers to st7735.o(i.commandList) for commandList
+    st7735.o(i.ST7735_InitR) refers to lcd.o(.text) for writecommand
+    st7735.o(i.ST7735_InitR) refers to st7735.o(i.ST7735_SetCursor) for ST7735_SetCursor
+    st7735.o(i.ST7735_InitR) refers to st7735.o(i.ST7735_FillScreen) for ST7735_FillScreen
+    st7735.o(i.ST7735_InitR) refers to st7735.o(.constdata) for Rcmd1
+    st7735.o(i.ST7735_InitR) refers to st7735.o(.data) for ColStart
+    st7735.o(i.ST7735_InvertDisplay) refers to lcd.o(.text) for writecommand
+    st7735.o(i.ST7735_OutChar) refers to st7735.o(i.ST7735_DrawString) for ST7735_DrawString
+    st7735.o(i.ST7735_OutChar) refers to st7735.o(i.ST7735_DrawCharS) for ST7735_DrawCharS
+    st7735.o(i.ST7735_OutChar) refers to st7735.o(.data) for StY
+    st7735.o(i.ST7735_OutString) refers to st7735.o(i.ST7735_OutChar) for ST7735_OutChar
+    st7735.o(i.ST7735_OutUDec) refers to st7735.o(i.fillmessage) for fillmessage
+    st7735.o(i.ST7735_OutUDec) refers to st7735.o(i.ST7735_DrawString) for ST7735_DrawString
+    st7735.o(i.ST7735_OutUDec) refers to st7735.o(i.ST7735_DrawCharS) for ST7735_DrawCharS
+    st7735.o(i.ST7735_OutUDec) refers to st7735.o(.data) for Messageindex
+    st7735.o(i.ST7735_OutUDec) refers to st7735.o(.bss) for Message
+    st7735.o(i.ST7735_PlotBar) refers to st7735.o(i.ST7735_DrawFastVLine) for ST7735_DrawFastVLine
+    st7735.o(i.ST7735_PlotBar) refers to st7735.o(.data) for Ymin
+    st7735.o(i.ST7735_PlotClear) refers to st7735.o(i.ST7735_Color565) for ST7735_Color565
+    st7735.o(i.ST7735_PlotClear) refers to st7735.o(i.ST7735_FillRect) for ST7735_FillRect
+    st7735.o(i.ST7735_PlotClear) refers to st7735.o(.data) for Ymax
+    st7735.o(i.ST7735_PlotLine) refers to st7735.o(i.ST7735_DrawPixel) for ST7735_DrawPixel
+    st7735.o(i.ST7735_PlotLine) refers to st7735.o(.data) for Ymin
+    st7735.o(i.ST7735_PlotNext) refers to st7735.o(.data) for X
+    st7735.o(i.ST7735_PlotNextErase) refers to st7735.o(i.ST7735_Color565) for ST7735_Color565
+    st7735.o(i.ST7735_PlotNextErase) refers to st7735.o(i.ST7735_DrawFastVLine) for ST7735_DrawFastVLine
+    st7735.o(i.ST7735_PlotNextErase) refers to st7735.o(.data) for X
+    st7735.o(i.ST7735_PlotPoint) refers to st7735.o(i.ST7735_DrawPixel) for ST7735_DrawPixel
+    st7735.o(i.ST7735_PlotPoint) refers to st7735.o(.data) for Ymin
+    st7735.o(i.ST7735_PlotPoints) refers to st7735.o(i.ST7735_DrawPixel) for ST7735_DrawPixel
+    st7735.o(i.ST7735_PlotPoints) refers to st7735.o(.data) for Ymin
+    st7735.o(i.ST7735_PlotdBfs) refers to st7735.o(i.ST7735_DrawFastVLine) for ST7735_DrawFastVLine
+    st7735.o(i.ST7735_PlotdBfs) refers to st7735.o(.constdata) for dBfs
+    st7735.o(i.ST7735_PlotdBfs) refers to st7735.o(.data) for X
+    st7735.o(i.ST7735_SetCursor) refers to st7735.o(.data) for StX
+    st7735.o(i.ST7735_SetRotation) refers to lcd.o(.text) for writecommand
+    st7735.o(i.ST7735_SetRotation) refers to st7735.o(.data) for Rotation
+    st7735.o(i.ST7735_SetTextColor) refers to st7735.o(.data) for StTextColor
+    st7735.o(i.commandList) refers to lcd.o(.text) for writecommand
+    st7735.o(i.commandList) refers to st7735.o(i.Delay1ms) for Delay1ms
+    st7735.o(i.commonInit) refers to st7735.o(i.Delay1ms) for Delay1ms
+    st7735.o(i.commonInit) refers to st7735.o(i.commandList) for commandList
+    st7735.o(i.commonInit) refers to st7735.o(.data) for RowStart
+    st7735.o(i.fillmessage) refers to st7735.o(.bss) for Message
+    st7735.o(i.fillmessage) refers to st7735.o(.data) for Messageindex
+    st7735.o(i.fputc) refers to st7735.o(i.ST7735_OutChar) for ST7735_OutChar
+    st7735.o(i.pushColor) refers to lcd.o(.text) for writedata
+    st7735.o(i.setAddrWindow) refers to lcd.o(.text) for writecommand
+    st7735.o(i.setAddrWindow) refers to st7735.o(.data) for ColStart
+    uart.o(i.UART1_Handler) refers to uart.o(i.UART_InChar) for UART_InChar
+    uart.o(i.UART1_Handler) refers to fifo.o(i.FiFo_Put) for FiFo_Put
+    uart.o(i.UART1_Handler) refers to lab9.o(.data) for Button_Flag
+    uart.o(i.UART_Init) refers to fifo.o(i.FiFo_Init) for FiFo_Init
+    lab9.o(i.Arena_Jump) refers to lab9.o(i.Gravity_Check) for Gravity_Check
+    lab9.o(i.Arena_Jump) refers to lab9.o(i.Gravity_Start) for Gravity_Start
+    lab9.o(i.Arena_Jump) refers to lab9.o(i.Gravity) for Gravity
+    lab9.o(i.Arena_Jump) refers to lab9.o(i.jump) for jump
+    lab9.o(i.Arena_Jump) refers to lab9.o(i.Change_Sprite) for Change_Sprite
+    lab9.o(i.Arena_Jump) refers to lab9.o(i.Battle_Arena_Collision) for Battle_Arena_Collision
+    lab9.o(i.Arena_Jump) refers to lab9.o(.data) for JumpUp
+    lab9.o(i.Arena_Move_Player) refers to lab9.o(i.xAxis_Move_Arena) for xAxis_Move_Arena
+    lab9.o(i.Arena_Move_Player) refers to lab9.o(i.Arena_Jump) for Arena_Jump
+    lab9.o(i.Arena_Move_Player) refers to lab9.o(i.Draw_Sprite) for Draw_Sprite
+    lab9.o(i.Battle_Arena) refers to lab9.o(i.Generate_Level) for Generate_Level
+    lab9.o(i.Battle_Arena) refers to lab9.o(i.Arena_Move_Player) for Arena_Move_Player
+    lab9.o(i.Battle_Arena) refers to lab9.o(i.Update_Battle_Arena) for Update_Battle_Arena
+    lab9.o(i.Battle_Arena) refers to lab9.o(i.FrameRateDelay) for FrameRateDelay
+    lab9.o(i.Battle_Arena) refers to lab9.o(.data) for cLevel
+    lab9.o(i.Battle_Arena) refers to lab9.o(.bss) for RedGirlLeftSprite
+    lab9.o(i.Battle_Arena_Collision) refers to lab9.o(i.Sprite_Collision) for Sprite_Collision
+    lab9.o(i.Battle_Arena_Collision) refers to lab9.o(i.PlayerC_Handler) for PlayerC_Handler
+    lab9.o(i.Battle_Arena_Collision) refers to lab9.o(i.Collision_Checker_Platform) for Collision_Checker_Platform
+    lab9.o(i.Battle_Arena_Collision) refers to lab9.o(i.Collision_Handler_Platform) for Collision_Handler_Platform
+    lab9.o(i.Battle_Arena_Collision) refers to lab9.o(.bss) for levelSprites
+    lab9.o(i.Battle_Arena_Win) refers to lab9.o(i.Change_Sound) for Change_Sound
+    lab9.o(i.Battle_Arena_Win) refers to st7735.o(i.ST7735_FillRect) for ST7735_FillRect
+    lab9.o(i.Battle_Arena_Win) refers to st7735.o(i.ST7735_SetCursor) for ST7735_SetCursor
+    lab9.o(i.Battle_Arena_Win) refers to st7735.o(i.ST7735_OutString) for ST7735_OutString
+    lab9.o(i.Battle_Arena_Win) refers to lab9.o(i.Draw_Sprite) for Draw_Sprite
+    lab9.o(i.Battle_Arena_Win) refers to lab9.o(i.Update_Battle_Menu) for Update_Battle_Menu
+    lab9.o(i.Battle_Arena_Win) refers to lab9.o(i.FrameRateDelay) for FrameRateDelay
+    lab9.o(i.Battle_Arena_Win) refers to lab9.o(i.Reset_Players) for Reset_Players
+    lab9.o(i.Battle_Arena_Win) refers to lab9.o(i.Generate_Level) for Generate_Level
+    lab9.o(i.Battle_Arena_Win) refers to lab9.o(.constdata) for .constdata
+    lab9.o(i.Battle_Arena_Win) refers to lab9.o(.bss) for bab00
+    lab9.o(i.Battle_Arena_Win) refers to lab9.o(.data) for buttonFlag
+    lab9.o(i.BulletC_Handler) refers to lab9.o(i.Game_Over) for Game_Over
+    lab9.o(i.Bullet_Arena_Collisions) refers to lab9.o(i.Collision_Checker_Platform) for Collision_Checker_Platform
+    lab9.o(i.Bullet_Arena_Collisions) refers to st7735.o(i.ST7735_FillRect) for ST7735_FillRect
+    lab9.o(i.Bullet_Arena_Collisions) refers to lab9.o(.constdata) for .constdata
+    lab9.o(i.Bullet_Init) refers to lab9.o(.bss) for LevelBullet010
+    lab9.o(i.Bullet_Init) refers to lab9.o(.data) for jetPackBullets
+    lab9.o(i.Bullet_Init) refers to lab9.o(.constdata) for .constdata
+    lab9.o(i.ButtonC1_Handler) refers to lab9.o(i.PlayerC_Handler) for PlayerC_Handler
+    lab9.o(i.ButtonC1_Handler) refers to lab9.o(i.Button_Handler) for Button_Handler
+    lab9.o(i.ButtonC1_Handler) refers to lab9.o(i.Change_Button_Bitmap) for Change_Button_Bitmap
+    lab9.o(i.ButtonC2_Handler) refers to lab9.o(i.PlayerC_Handler) for PlayerC_Handler
+    lab9.o(i.ButtonC2_Handler) refers to lab9.o(i.Change_Button_Bitmap) for Change_Button_Bitmap
+    lab9.o(i.ButtonC2_Handler) refers to lab9.o(i.Button_Handler) for Button_Handler
+    lab9.o(i.ButtonC2_Handler) refers to lab9.o(.constdata) for ButtonUnpressed
+    lab9.o(i.Button_Handler) refers to lab9.o(i.Change_Sound) for Change_Sound
+    lab9.o(i.Button_Handler) refers to lab9.o(.bss) for Levels
+    lab9.o(i.Button_Handler) refers to lab9.o(.data) for cLevel
+    lab9.o(i.Button_Init) refers to lab9.o(.constdata) for .constdata
+    lab9.o(i.Button_Init) refers to lab9.o(.bss) for levelButton010
+    lab9.o(i.Button_Pressed) refers to fifo.o(i.FiFo_Get) for FiFo_Get
+    lab9.o(i.Button_Pressed) refers to lab9.o(i.Pause) for Pause
+    lab9.o(i.Button_Pressed) refers to lab9.o(i.Swap_Player) for Swap_Player
+    lab9.o(i.Button_Pressed) refers to lab9.o(i.Reset) for Reset
+    lab9.o(i.Button_Pressed) refers to lab9.o(.data) for Button_Flag
+    lab9.o(i.Change_Button_Bitmap) refers to lab9.o(i.Draw_Sprite) for Draw_Sprite
+    lab9.o(i.Change_Button_Bitmap) refers to lab9.o(.constdata) for ButtonPressed
+    lab9.o(i.Change_Sound) refers to uart.o(i.UART_OutChar) for UART_OutChar
+    lab9.o(i.Change_Sprite) refers to lab9.o(i.Draw_Sprite) for Draw_Sprite
+    lab9.o(i.Change_Sprite) refers to st7735.o(i.ST7735_FillRect) for ST7735_FillRect
+    lab9.o(i.Change_Sprite) refers to lab9.o(.bss) for BlueBoyJumpUpSprite
+    lab9.o(i.Collision_Checker_Platform) refers to lab9.o(i.SpriteRect_Collision) for SpriteRect_Collision
+    lab9.o(i.Collision_Checker_Platform) refers to lab9.o(.bss) for Levels
+    lab9.o(i.Collision_Checker_Platform) refers to lab9.o(.data) for cLevel
+    lab9.o(i.Collision_Checker_Sprite) refers to lab9.o(i.Sprite_Collision) for Sprite_Collision
+    lab9.o(i.Collision_Checker_Sprite) refers to lab9.o(.bss) for levelSprites
+    lab9.o(i.Collision_Checker_Sprite) refers to lab9.o(.data) for lSpritesSize
+    lab9.o(i.Collision_Handler_Platform) refers to lab9.o(i.Colour_Check) for Colour_Check
+    lab9.o(i.Collision_Handler_Platform) refers to lab9.o(i.Jump_Reset) for Jump_Reset
+    lab9.o(i.Collision_Handler_Platform) refers to lab9.o(.bss) for TopBorder
+    lab9.o(i.Collision_Handler_Platform) refers to lab9.o(.data) for cLevel
+    lab9.o(i.Collision_Handlers_Sprite) refers to lab9.o(i.PlayerC_Handler) for PlayerC_Handler
+    lab9.o(i.Collision_Handlers_Sprite) refers to lab9.o(i.Change_Sound) for Change_Sound
+    lab9.o(i.Collision_Handlers_Sprite) refers to lab9.o(i.mPlatformC_Handler) for mPlatformC_Handler
+    lab9.o(i.Collision_Handlers_Sprite) refers to lab9.o(i.BulletC_Handler) for BulletC_Handler
+    lab9.o(i.Collision_Handlers_Sprite) refers to lab9.o(i.ButtonC1_Handler) for ButtonC1_Handler
+    lab9.o(i.Collision_Handlers_Sprite) refers to lab9.o(i.ButtonC2_Handler) for ButtonC2_Handler
+    lab9.o(i.Collision_Handlers_Sprite) refers to lab9.o(i.ButtonC3_Handler) for ButtonC3_Handler
+    lab9.o(i.Collisions) refers to lab9.o(i.Collision_Checker_Sprite) for Collision_Checker_Sprite
+    lab9.o(i.Collisions) refers to lab9.o(i.Collision_Handlers_Sprite) for Collision_Handlers_Sprite
+    lab9.o(i.Collisions) refers to lab9.o(i.Collision_Checker_Platform) for Collision_Checker_Platform
+    lab9.o(i.Collisions) refers to lab9.o(i.Collision_Handler_Platform) for Collision_Handler_Platform
+    lab9.o(i.Colour_Check) refers to lab9.o(i.Game_Over) for Game_Over
+    lab9.o(i.Draw_Menu) refers to st7735.o(i.ST7735_SetCursor) for ST7735_SetCursor
+    lab9.o(i.Draw_Menu) refers to st7735.o(i.ST7735_OutString) for ST7735_OutString
+    lab9.o(i.Draw_Menu) refers to lab9.o(i.Draw_Sprite) for Draw_Sprite
+    lab9.o(i.Draw_Menu) refers to lab9.o(.bss) for arrowSprite
+    lab9.o(i.Draw_Rect) refers to st7735.o(i.ST7735_FillRect) for ST7735_FillRect
+    lab9.o(i.Draw_Sprite) refers to st7735.o(i.ST7735_DrawBitmap) for ST7735_DrawBitmap
+    lab9.o(i.Game_Mode) refers to lab9.o(i.Reset_Players) for Reset_Players
+    lab9.o(i.Game_Mode) refers to lab9.o(i.Puzzle_Mode) for Puzzle_Mode
+    lab9.o(i.Game_Mode) refers to lab9.o(i.Race) for Race
+    lab9.o(i.Game_Mode) refers to lab9.o(i.JetPack) for JetPack
+    lab9.o(i.Game_Mode) refers to lab9.o(i.Battle_Arena) for Battle_Arena
+    lab9.o(i.Game_Mode) refers to lab9.o(i.Main_Menu) for Main_Menu
+    lab9.o(i.Game_Mode) refers to lab9.o(i.FrameRateDelay) for FrameRateDelay
+    lab9.o(i.Game_Over) refers to lab9.o(i.Change_Sound) for Change_Sound
+    lab9.o(i.Game_Over) refers to st7735.o(i.ST7735_FillScreen) for ST7735_FillScreen
+    lab9.o(i.Game_Over) refers to st7735.o(i.ST7735_SetCursor) for ST7735_SetCursor
+    lab9.o(i.Game_Over) refers to st7735.o(i.ST7735_OutString) for ST7735_OutString
+    lab9.o(i.Game_Over) refers to lab9.o(i.FrameRateDelay) for FrameRateDelay
+    lab9.o(i.Game_Over) refers to lab9.o(i.Reset) for Reset
+    lab9.o(i.Game_Over) refers to lab9.o(.data) for gameOverFlag
+    lab9.o(i.Generate_Level) refers to st7735.o(i.ST7735_FillScreen) for ST7735_FillScreen
+    lab9.o(i.Generate_Level) refers to lab9.o(i.Change_Rect) for Change_Rect
+    lab9.o(i.Generate_Level) refers to lab9.o(i.Draw_Rect) for Draw_Rect
+    lab9.o(i.Generate_Level) refers to lab9.o(i.Draw_Sprite) for Draw_Sprite
+    lab9.o(i.Generate_Level) refers to lab9.o(i.FrameRateDelay) for FrameRateDelay
+    lab9.o(i.Generate_Level) refers to lab9.o(.bss) for TopBorder
+    lab9.o(i.Generate_Level) refers to lab9.o(.data) for lSpritesSize
+    lab9.o(i.Generate_Level) refers to lab9.o(.constdata) for ButtonUnpressed
+    lab9.o(i.Generate_Race) refers to st7735.o(i.ST7735_FillScreen) for ST7735_FillScreen
+    lab9.o(i.Generate_Race) refers to lab9.o(i.Draw_Rect) for Draw_Rect
+    lab9.o(i.Generate_Race) refers to lab9.o(i.rand) for rand
+    lab9.o(i.Generate_Race) refers to lab9.o(i.Reset_Players) for Reset_Players
+    lab9.o(i.Generate_Race) refers to lab9.o(i.Draw_Sprite) for Draw_Sprite
+    lab9.o(i.Generate_Race) refers to lab9.o(.data) for raceRects
+    lab9.o(i.Generate_Race) refers to lab9.o(.constdata) for .constdata
+    lab9.o(i.Generate_Race) refers to lab9.o(.bss) for Player1
+    lab9.o(i.Gravity) refers to lab9.o(.constdata) for jumpArr
+    lab9.o(i.Gravity_Check) refers to lab9.o(i.Sprite_Gravity) for Sprite_Gravity
+    lab9.o(i.Gravity_Check) refers to lab9.o(i.Platform_Gravity) for Platform_Gravity
+    lab9.o(i.Gravity_Check) refers to lab9.o(i.Colour_Check) for Colour_Check
+    lab9.o(i.Gravity_Check) refers to lab9.o(.bss) for levelSprites
+    lab9.o(i.Gravity_Check) refers to lab9.o(.data) for lSpritesSize
+    lab9.o(i.Gravity_Start) refers to lab9.o(i.Change_Sprite) for Change_Sprite
+    lab9.o(i.Gravity_Start) refers to lab9.o(.data) for JumpDown
+    lab9.o(i.JetPack) refers to lab9.o(i.Generate_Level) for Generate_Level
+    lab9.o(i.JetPack) refers to lab9.o(i.SysTick_Enable) for SysTick_Enable
+    lab9.o(i.JetPack) refers to lab9.o(i.JetPack_Move) for JetPack_Move
+    lab9.o(i.JetPack) refers to lab9.o(i.Update_Stage) for Update_Stage
+    lab9.o(i.JetPack) refers to lab9.o(i.FrameRateDelay) for FrameRateDelay
+    lab9.o(i.JetPack) refers to lab9.o(i.Main_Menu) for Main_Menu
+    lab9.o(i.JetPack) refers to lab9.o(.data) for cLevel
+    lab9.o(i.JetPack) refers to lab9.o(.bss) for Player1
+    lab9.o(i.JetPack_Move) refers to lab9.o(i.xAxis_Move) for xAxis_Move
+    lab9.o(i.JetPack_Move) refers to lab9.o(i.Change_Sprite) for Change_Sprite
+    lab9.o(i.JetPack_Move) refers to lab9.o(i.Collisions) for Collisions
+    lab9.o(i.JetPack_Move) refers to lab9.o(i.JetPack_Win) for JetPack_Win
+    lab9.o(i.JetPack_Move) refers to lab9.o(i.Draw_Sprite) for Draw_Sprite
+    lab9.o(i.JetPack_Move) refers to lab9.o(.data) for JumpUp
+    lab9.o(i.JetPack_Win) refers to lab9.o(i.Change_Sound) for Change_Sound
+    lab9.o(i.JetPack_Win) refers to st7735.o(i.ST7735_FillScreen) for ST7735_FillScreen
+    lab9.o(i.JetPack_Win) refers to st7735.o(i.ST7735_SetCursor) for ST7735_SetCursor
+    lab9.o(i.JetPack_Win) refers to st7735.o(i.ST7735_OutString) for ST7735_OutString
+    lab9.o(i.JetPack_Win) refers to lab9.o(i.FrameRateDelay) for FrameRateDelay
+    lab9.o(i.JetPack_Win) refers to lab9.o(i.Out_Num) for Out_Num
+    lab9.o(i.JetPack_Win) refers to lab9.o(i.Return_To_Main_Menu) for Return_To_Main_Menu
+    lab9.o(i.JetPack_Win) refers to lab9.o(.data) for gameTimer
+    lab9.o(i.Jump_Player) refers to lab9.o(i.Gravity_Check) for Gravity_Check
+    lab9.o(i.Jump_Player) refers to lab9.o(i.Gravity_Start) for Gravity_Start
+    lab9.o(i.Jump_Player) refers to lab9.o(i.Gravity) for Gravity
+    lab9.o(i.Jump_Player) refers to lab9.o(i.Change_Button_Bitmap) for Change_Button_Bitmap
+    lab9.o(i.Jump_Player) refers to lab9.o(i.jump) for jump
+    lab9.o(i.Jump_Player) refers to lab9.o(i.Change_Sprite) for Change_Sprite
+    lab9.o(i.Jump_Player) refers to lab9.o(i.Collisions) for Collisions
+    lab9.o(i.Jump_Player) refers to lab9.o(.data) for JumpUp
+    lab9.o(i.Jump_Reset) refers to lab9.o(i.Change_Sprite) for Change_Sprite
+    lab9.o(i.Jump_Reset) refers to lab9.o(.data) for Right
+    lab9.o(i.Level_Init) refers to lab9.o(i.Change_Rect) for Change_Rect
+    lab9.o(i.Level_Init) refers to lab9.o(.bss) for TopBorder
+    lab9.o(i.Level_Init) refers to lab9.o(.constdata) for .constdata
+    lab9.o(i.Level_Init) refers to lab9.o(.data) for jetPackRects
+    lab9.o(i.Level_Up) refers to lab9.o(i.Change_Sound) for Change_Sound
+    lab9.o(i.Level_Up) refers to st7735.o(i.ST7735_FillScreen) for ST7735_FillScreen
+    lab9.o(i.Level_Up) refers to st7735.o(i.ST7735_SetCursor) for ST7735_SetCursor
+    lab9.o(i.Level_Up) refers to st7735.o(i.ST7735_OutString) for ST7735_OutString
+    lab9.o(i.Level_Up) refers to lab9.o(i.FrameRateDelay) for FrameRateDelay
+    lab9.o(i.Level_Up) refers to st7735.o(i.ST7735_OutChar) for ST7735_OutChar
+    lab9.o(i.Level_Up) refers to lab9.o(i.Reset) for Reset
+    lab9.o(i.Level_Up) refers to lab9.o(.data) for cLevel
+    lab9.o(i.Main_Menu) refers to st7735.o(i.ST7735_FillScreen) for ST7735_FillScreen
+    lab9.o(i.Main_Menu) refers to lab9.o(i.Draw_Menu) for Draw_Menu
+    lab9.o(i.Main_Menu) refers to lab9.o(i.FrameRateDelay) for FrameRateDelay
+    lab9.o(i.Main_Menu) refers to lab9.o(.bss) for arrowSprite
+    lab9.o(i.Main_Menu) refers to lab9.o(.data) for selectionButton
+    lab9.o(i.Move_Bullet) refers to st7735.o(i.ST7735_FillRect) for ST7735_FillRect
+    lab9.o(i.Move_Bullet) refers to lab9.o(i.Change_Sound) for Change_Sound
+    lab9.o(i.Move_Bullet) refers to lab9.o(i.Draw_Sprite) for Draw_Sprite
+    lab9.o(i.Move_Bullet_Arena) refers to st7735.o(i.ST7735_FillRect) for ST7735_FillRect
+    lab9.o(i.Move_Bullet_Arena) refers to lab9.o(i.Change_Sound) for Change_Sound
+    lab9.o(i.Move_Bullet_Arena) refers to lab9.o(i.Bullet_Arena_Collisions) for Bullet_Arena_Collisions
+    lab9.o(i.Move_Bullet_Arena) refers to lab9.o(i.Draw_Sprite) for Draw_Sprite
+    lab9.o(i.Move_Bullet_Arena) refers to lab9.o(i.Sprite_Collision) for Sprite_Collision
+    lab9.o(i.Move_Bullet_Arena) refers to lab9.o(i.Battle_Arena_Win) for Battle_Arena_Win
+    lab9.o(i.Move_Bullet_Arena) refers to lab9.o(.bss) for Player2
+    lab9.o(i.Move_Level_Bullets) refers to lab9.o(i.Move_Bullet) for Move_Bullet
+    lab9.o(i.Move_Level_Bullets) refers to lab9.o(.bss) for Levels
+    lab9.o(i.Move_Level_Bullets) refers to lab9.o(.data) for cLevel
+    lab9.o(i.Move_Level_Platforms) refers to lab9.o(i.Move_Platform) for Move_Platform
+    lab9.o(i.Move_Level_Platforms) refers to lab9.o(.bss) for Levels
+    lab9.o(i.Move_Level_Platforms) refers to lab9.o(.data) for cLevel
+    lab9.o(i.Move_Platform) refers to lab9.o(i.Move_Player_On_Platform) for Move_Player_On_Platform
+    lab9.o(i.Move_Platform) refers to lab9.o(i.Draw_Sprite) for Draw_Sprite
+    lab9.o(i.Move_Platform) refers to lab9.o(.bss) for Player1
+    lab9.o(i.Move_Player) refers to lab9.o(i.xAxis_Move) for xAxis_Move
+    lab9.o(i.Move_Player) refers to lab9.o(i.Jump_Player) for Jump_Player
+    lab9.o(i.Move_Player) refers to lab9.o(i.Draw_Sprite) for Draw_Sprite
+    lab9.o(i.Move_Player) refers to lab9.o(i.Next_Level) for Next_Level
+    lab9.o(i.Move_Player_On_Platform) refers to lab9.o(i.Sprite_Gravity) for Sprite_Gravity
+    lab9.o(i.Move_Player_On_Platform) refers to lab9.o(i.Draw_Sprite) for Draw_Sprite
+    lab9.o(i.Next_Level) refers to lab9.o(i.Reset_Players) for Reset_Players
+    lab9.o(i.Next_Level) refers to lab9.o(i.Level_Up) for Level_Up
+    lab9.o(i.Next_Level) refers to lab9.o(i.Victory_Screen) for Victory_Screen
+    lab9.o(i.Next_Level) refers to lab9.o(i.Generate_Level) for Generate_Level
+    lab9.o(i.Next_Level) refers to lab9.o(.data) for cStage
+    lab9.o(i.Out_Num) refers to st7735.o(i.ST7735_OutChar) for ST7735_OutChar
+    lab9.o(i.Pause) refers to lab9.o(i.Button_Pressed) for Button_Pressed
+    lab9.o(i.Pause) refers to lab9.o(.data) for pauseStatus
+    lab9.o(i.PlayerC_Handler) refers to lab9.o(i.Jump_Reset) for Jump_Reset
+    lab9.o(i.Player_Init) refers to rt_memcpy_w.o(.text) for __aeabi_memcpy4
+    lab9.o(i.Player_Init) refers to lab9.o(.constdata) for .constdata
+    lab9.o(i.Player_Init) refers to lab9.o(.bss) for Player1
+    lab9.o(i.Puzzle_Mode) refers to lab9.o(i.Generate_Level) for Generate_Level
+    lab9.o(i.Puzzle_Mode) refers to lab9.o(i.SysTick_Enable) for SysTick_Enable
+    lab9.o(i.Puzzle_Mode) refers to lab9.o(i.FrameRateDelay) for FrameRateDelay
+    lab9.o(i.Puzzle_Mode) refers to lab9.o(i.Move_Player) for Move_Player
+    lab9.o(i.Puzzle_Mode) refers to lab9.o(i.Update_Stage) for Update_Stage
+    lab9.o(i.Puzzle_Mode) refers to lab9.o(i.Button_Pressed) for Button_Pressed
+    lab9.o(i.Puzzle_Mode) refers to lab9.o(.data) for cLevel
+    lab9.o(i.Puzzle_Mode) refers to lab9.o(.bss) for Player1
+    lab9.o(i.Race) refers to lab9.o(i.Change_Rect) for Change_Rect
+    lab9.o(i.Race) refers to lab9.o(i.Generate_Race) for Generate_Race
+    lab9.o(i.Race) refers to lab9.o(i.FrameRateDelay) for FrameRateDelay
+    lab9.o(i.Race) refers to lab9.o(i.Race_Move) for Race_Move
+    lab9.o(i.Race) refers to lab9.o(i.Reset_Players) for Reset_Players
+    lab9.o(i.Race) refers to lab9.o(.bss) for raceR
+    lab9.o(i.Race) refers to lab9.o(.data) for raceRects
+    lab9.o(i.Race) refers to lab9.o(.constdata) for .constdata
+    lab9.o(i.Race_Move) refers to lab9.o(i.Collisions) for Collisions
+    lab9.o(i.Race_Move) refers to lab9.o(i.Race_Over) for Race_Over
+    lab9.o(i.Race_Move) refers to lab9.o(i.Generate_Race) for Generate_Race
+    lab9.o(i.Race_Move) refers to lab9.o(i.Jump_Player) for Jump_Player
+    lab9.o(i.Race_Move) refers to lab9.o(i.Draw_Sprite) for Draw_Sprite
+    lab9.o(i.Race_Over) refers to lab9.o(i.Change_Sound) for Change_Sound
+    lab9.o(i.Race_Over) refers to st7735.o(i.ST7735_FillRect) for ST7735_FillRect
+    lab9.o(i.Race_Over) refers to st7735.o(i.ST7735_SetCursor) for ST7735_SetCursor
+    lab9.o(i.Race_Over) refers to st7735.o(i.ST7735_OutString) for ST7735_OutString
+    lab9.o(i.Race_Over) refers to lab9.o(i.Draw_Sprite) for Draw_Sprite
+    lab9.o(i.Race_Over) refers to lab9.o(i.Update_Race) for Update_Race
+    lab9.o(i.Race_Over) refers to lab9.o(i.FrameRateDelay) for FrameRateDelay
+    lab9.o(i.Race_Over) refers to lab9.o(i.Generate_Race) for Generate_Race
+    lab9.o(i.Race_Over) refers to lab9.o(.bss) for arrowSprite
+    lab9.o(i.Race_Over) refers to lab9.o(.data) for buttonFlag
+    lab9.o(i.Reset) refers to lab9.o(i.Reset_Bullets) for Reset_Bullets
+    lab9.o(i.Reset) refers to lab9.o(i.Next_Level) for Next_Level
+    lab9.o(i.Reset) refers to lab9.o(i.Reset_Players) for Reset_Players
+    lab9.o(i.Reset) refers to lab9.o(i.Generate_Level) for Generate_Level
+    lab9.o(i.Reset) refers to lab9.o(i.FrameRateDelay) for FrameRateDelay
+    lab9.o(i.Reset) refers to lab9.o(.data) for cStage
+    lab9.o(i.Reset_Bullets) refers to lab9.o(.bss) for Levels
+    lab9.o(i.Reset_Bullets) refers to lab9.o(.data) for cLevel
+    lab9.o(i.Reset_Players) refers to lab9.o(i.Player_Init) for Player_Init
+    lab9.o(i.Reset_Players) refers to lab9.o(.bss) for BlueBoyRightSprite
+    lab9.o(i.Return_To_Main_Menu) refers to st7735.o(i.ST7735_SetCursor) for ST7735_SetCursor
+    lab9.o(i.Return_To_Main_Menu) refers to st7735.o(i.ST7735_OutString) for ST7735_OutString
+    lab9.o(i.Return_To_Main_Menu) refers to lab9.o(i.FrameRateDelay) for FrameRateDelay
+    lab9.o(i.Sprite_Init) refers to lab9.o(.constdata) for .constdata
+    lab9.o(i.Sprite_Init) refers to lab9.o(.bss) for arrowSprite
+    lab9.o(i.Sprite_Init) refers to lab9.o(.data) for Right
+    lab9.o(i.Swap_Player) refers to lab9.o(.bss) for Player1
+    lab9.o(i.SysTick_Handler) refers to lab9.o(.data) for gameTimer
+    lab9.o(i.Update_Battle_Arena) refers to lab9.o(i.Bullet_Arena_Collisions) for Bullet_Arena_Collisions
+    lab9.o(i.Update_Battle_Arena) refers to lab9.o(i.Move_Bullet_Arena) for Move_Bullet_Arena
+    lab9.o(i.Update_Battle_Arena) refers to lab9.o(.bss) for ba00
+    lab9.o(i.Update_Battle_Menu) refers to st7735.o(i.ST7735_FillRect) for ST7735_FillRect
+    lab9.o(i.Update_Battle_Menu) refers to lab9.o(i.Draw_Sprite) for Draw_Sprite
+    lab9.o(i.Update_Battle_Menu) refers to lab9.o(.data) for buttonFlag
+    lab9.o(i.Update_Battle_Menu) refers to lab9.o(.bss) for arrowSprite
+    lab9.o(i.Update_Menu) refers to st7735.o(i.ST7735_FillRect) for ST7735_FillRect
+    lab9.o(i.Update_Menu) refers to lab9.o(i.Draw_Sprite) for Draw_Sprite
+    lab9.o(i.Update_Menu) refers to lab9.o(.data) for buttonFlag
+    lab9.o(i.Update_Menu) refers to lab9.o(.bss) for arrowSprite
+    lab9.o(i.Update_Race) refers to st7735.o(i.ST7735_FillRect) for ST7735_FillRect
+    lab9.o(i.Update_Race) refers to lab9.o(i.Draw_Sprite) for Draw_Sprite
+    lab9.o(i.Update_Race) refers to lab9.o(.data) for buttonFlag
+    lab9.o(i.Update_Race) refers to lab9.o(.bss) for arrowSprite
+    lab9.o(i.Update_Stage) refers to lab9.o(i.Move_Level_Platforms) for Move_Level_Platforms
+    lab9.o(i.Update_Stage) refers to lab9.o(i.Move_Level_Bullets) for Move_Level_Bullets
+    lab9.o(i.Victory_Screen) refers to st7735.o(i.ST7735_FillScreen) for ST7735_FillScreen
+    lab9.o(i.Victory_Screen) refers to st7735.o(i.ST7735_SetCursor) for ST7735_SetCursor
+    lab9.o(i.Victory_Screen) refers to st7735.o(i.ST7735_OutString) for ST7735_OutString
+    lab9.o(i.Victory_Screen) refers to lab9.o(i.FrameRateDelay) for FrameRateDelay
+    lab9.o(i.Victory_Screen) refers to lab9.o(i.Out_Num) for Out_Num
+    lab9.o(i.Victory_Screen) refers to lab9.o(i.Return_To_Main_Menu) for Return_To_Main_Menu
+    lab9.o(i.Victory_Screen) refers to lab9.o(.data) for gameTimer
+    lab9.o(i.jump) refers to lab9.o(i.Change_Sound) for Change_Sound
+    lab9.o(i.jump) refers to lab9.o(i.Gravity_Start) for Gravity_Start
+    lab9.o(i.jump) refers to lab9.o(.constdata) for jumpArr
+    lab9.o(i.mPlatformC_Handler) refers to lab9.o(i.PlayerC_Handler) for PlayerC_Handler
+    lab9.o(i.mPlatformC_Handler) refers to lab9.o(i.Game_Over) for Game_Over
+    lab9.o(i.mPlatformC_Handler) refers to lab9.o(i.Draw_Sprite) for Draw_Sprite
+    lab9.o(i.mPlatformC_Handler) refers to lab9.o(.constdata) for VerticalPlatform
+    lab9.o(i.mPlatformC_Handler) refers to lab9.o(.bss) for Levels
+    lab9.o(i.mPlatformC_Handler) refers to lab9.o(.data) for cLevel
+    lab9.o(i.main) refers to texas.o(.text) for TExaS_Init
+    lab9.o(i.main) refers to st7735.o(i.ST7735_InitR) for ST7735_InitR
+    lab9.o(i.main) refers to adc.o(i.ADC_Init) for ADC_Init
+    lab9.o(i.main) refers to lab9.o(i.PortF_Init) for PortF_Init
+    lab9.o(i.main) refers to uart.o(i.UART_Init) for UART_Init
+    lab9.o(i.main) refers to lab9.o(i.SysTick_Init) for SysTick_Init
+    lab9.o(i.main) refers to lab9.o(i.SysTick_Disable) for SysTick_Disable
+    lab9.o(i.main) refers to lab9.o(i.ControllerButton_Init) for ControllerButton_Init
+    lab9.o(i.main) refers to startup.o(.text) for EnableInterrupts
+    lab9.o(i.main) refers to lab9.o(i.Sprite_Init) for Sprite_Init
+    lab9.o(i.main) refers to lab9.o(i.Player_Init) for Player_Init
+    lab9.o(i.main) refers to lab9.o(i.Button_Init) for Button_Init
+    lab9.o(i.main) refers to lab9.o(i.Bullet_Init) for Bullet_Init
+    lab9.o(i.main) refers to lab9.o(i.Level_Init) for Level_Init
+    lab9.o(i.main) refers to lab9.o(i.Main_Menu) for Main_Menu
+    lab9.o(i.main) refers to lab9.o(i.Game_Mode) for Game_Mode
+    lab9.o(i.main) refers to lab9.o(i.Update_Menu) for Update_Menu
+    lab9.o(i.main) refers to lab9.o(i.Button_Pressed) for Button_Pressed
+    lab9.o(i.main) refers to lab9.o(i.FrameRateDelay) for FrameRateDelay
+    lab9.o(i.main) refers to lab9.o(.data) for M
+    lab9.o(i.rand) refers to lab9.o(.data) for lfsr
+    lab9.o(i.xAxis_Move) refers to adc.o(i.ADC_In89) for ADC_In89
+    lab9.o(i.xAxis_Move) refers to lab9.o(i.Change_Sprite) for Change_Sprite
+    lab9.o(i.xAxis_Move) refers to lab9.o(i.Collisions) for Collisions
+    lab9.o(i.xAxis_Move) refers to lab9.o(.data) for ADCData
+    lab9.o(i.xAxis_Move_Arena) refers to adc.o(i.ADC_In89) for ADC_In89
+    lab9.o(i.xAxis_Move_Arena) refers to lab9.o(i.Change_Sprite) for Change_Sprite
+    lab9.o(i.xAxis_Move_Arena) refers to lab9.o(i.Battle_Arena_Collision) for Battle_Arena_Collision
+    lab9.o(i.xAxis_Move_Arena) refers to lab9.o(.data) for ADCData
+    lab9.o(.constdata) refers to lab9.o(.bss) for BlueBoyRightSprite
+    fifo.o(i.FiFo_Get) refers to fifo.o(.data) for GetI
+    fifo.o(i.FiFo_Get) refers to fifo.o(.bss) for FIFO
+    fifo.o(i.FiFo_Init) refers to fifo.o(.data) for GetI
+    fifo.o(i.FiFo_Put) refers to fifo.o(.data) for PutI
+    fifo.o(i.FiFo_Put) refers to fifo.o(.bss) for FIFO
+    texas.o(.text) refers to texas.o(.bss) for TExaS
+    texas.o(.text) refers to texas.o(.constdata) for IntroMsg
+    texas.o(.text) refers to texas.o(.data) for LastMode
+    __main.o(!!!main) refers to rtentry.o(.ARM.Collect$$rtentry$$00000000) for __rt_entry
+    rtentry.o(.ARM.Collect$$rtentry$$00000000) refers (Special) to rtentry2.o(.ARM.Collect$$rtentry$$0000000A) for __rt_entry_li
+    rtentry.o(.ARM.Collect$$rtentry$$00000000) refers (Special) to rtentry2.o(.ARM.Collect$$rtentry$$0000000D) for __rt_entry_main
+    rtentry.o(.ARM.Collect$$rtentry$$00000000) refers (Special) to rtentry2.o(.ARM.Collect$$rtentry$$0000000C) for __rt_entry_postli_1
+    rtentry.o(.ARM.Collect$$rtentry$$00000000) refers (Special) to rtentry2.o(.ARM.Collect$$rtentry$$00000009) for __rt_entry_postsh_1
+    rtentry.o(.ARM.Collect$$rtentry$$00000000) refers (Special) to rtentry2.o(.ARM.Collect$$rtentry$$00000002) for __rt_entry_presh_1
+    rtentry.o(.ARM.Collect$$rtentry$$00000000) refers (Special) to rtentry4.o(.ARM.Collect$$rtentry$$00000004) for __rt_entry_sh
+    rtentry2.o(.ARM.Collect$$rtentry$$00000008) refers to boardinit2.o(.text) for _platform_post_stackheap_init
+    rtentry2.o(.ARM.Collect$$rtentry$$0000000A) refers to libinit.o(.ARM.Collect$$libinit$$00000000) for __rt_lib_init
+    rtentry2.o(.ARM.Collect$$rtentry$$0000000B) refers to boardinit3.o(.text) for _platform_post_lib_init
+    rtentry2.o(.ARM.Collect$$rtentry$$0000000D) refers to lab9.o(i.main) for main
+    rtentry2.o(.ARM.Collect$$rtentry$$0000000D) refers to exit.o(.text) for exit
+    rtentry2.o(.ARM.exidx) refers to rtentry2.o(.ARM.Collect$$rtentry$$00000001) for .ARM.Collect$$rtentry$$00000001
+    rtentry2.o(.ARM.exidx) refers to rtentry2.o(.ARM.Collect$$rtentry$$00000008) for .ARM.Collect$$rtentry$$00000008
+    rtentry2.o(.ARM.exidx) refers to rtentry2.o(.ARM.Collect$$rtentry$$0000000A) for .ARM.Collect$$rtentry$$0000000A
+    rtentry2.o(.ARM.exidx) refers to rtentry2.o(.ARM.Collect$$rtentry$$0000000B) for .ARM.Collect$$rtentry$$0000000B
+    rtentry2.o(.ARM.exidx) refers to rtentry2.o(.ARM.Collect$$rtentry$$0000000D) for .ARM.Collect$$rtentry$$0000000D
+    rtentry4.o(.ARM.Collect$$rtentry$$00000004) refers to sys_stackheap_outer.o(.text) for __user_setup_stackheap
+    rtentry4.o(.ARM.exidx) refers to rtentry4.o(.ARM.Collect$$rtentry$$00000004) for .ARM.Collect$$rtentry$$00000004
+    sys_stackheap_outer.o(.text) refers to libspace.o(.text) for __user_perproc_libspace
+    sys_stackheap_outer.o(.text) refers to startup.o(.text) for __user_initial_stackheap
+    exit.o(.text) refers to rtexit.o(.ARM.Collect$$rtexit$$00000000) for __rt_exit
+    libinit.o(.ARM.Collect$$libinit$$00000000) refers (Special) to libinit2.o(.ARM.Collect$$libinit$$0000002C) for __rt_lib_init_alloca_1
+    libinit.o(.ARM.Collect$$libinit$$00000000) refers (Special) to libinit2.o(.ARM.Collect$$libinit$$0000002A) for __rt_lib_init_argv_1
+    libinit.o(.ARM.Collect$$libinit$$00000000) refers (Special) to libinit2.o(.ARM.Collect$$libinit$$00000019) for __rt_lib_init_atexit_1
+    libinit.o(.ARM.Collect$$libinit$$00000000) refers (Special) to libinit2.o(.ARM.Collect$$libinit$$0000001F) for __rt_lib_init_clock_1
+    libinit.o(.ARM.Collect$$libinit$$00000000) refers (Special) to libinit2.o(.ARM.Collect$$libinit$$00000030) for __rt_lib_init_cpp_1
+    libinit.o(.ARM.Collect$$libinit$$00000000) refers (Special) to libinit2.o(.ARM.Collect$$libinit$$0000002E) for __rt_lib_init_exceptions_1
+    libinit.o(.ARM.Collect$$libinit$$00000000) refers (Special) to libinit2.o(.ARM.Collect$$libinit$$00000002) for __rt_lib_init_fp_1
+    libinit.o(.ARM.Collect$$libinit$$00000000) refers (Special) to libinit2.o(.ARM.Collect$$libinit$$0000001D) for __rt_lib_init_fp_trap_1
+    libinit.o(.ARM.Collect$$libinit$$00000000) refers (Special) to libinit2.o(.ARM.Collect$$libinit$$00000021) for __rt_lib_init_getenv_1
+    libinit.o(.ARM.Collect$$libinit$$00000000) refers (Special) to libinit2.o(.ARM.Collect$$libinit$$00000008) for __rt_lib_init_heap_1
+    libinit.o(.ARM.Collect$$libinit$$00000000) refers (Special) to libinit2.o(.ARM.Collect$$libinit$$0000000F) for __rt_lib_init_lc_collate_1
+    libinit.o(.ARM.Collect$$libinit$$00000000) refers (Special) to libinit2.o(.ARM.Collect$$libinit$$00000011) for __rt_lib_init_lc_ctype_1
+    libinit.o(.ARM.Collect$$libinit$$00000000) refers (Special) to libinit2.o(.ARM.Collect$$libinit$$00000013) for __rt_lib_init_lc_monetary_1
+    libinit.o(.ARM.Collect$$libinit$$00000000) refers (Special) to libinit2.o(.ARM.Collect$$libinit$$00000015) for __rt_lib_init_lc_numeric_1
+    libinit.o(.ARM.Collect$$libinit$$00000000) refers (Special) to libinit2.o(.ARM.Collect$$libinit$$00000017) for __rt_lib_init_lc_time_1
+    libinit.o(.ARM.Collect$$libinit$$00000000) refers (Special) to libinit2.o(.ARM.Collect$$libinit$$0000000C) for __rt_lib_init_rand_1
+    libinit.o(.ARM.Collect$$libinit$$00000000) refers (Special) to libinit2.o(.ARM.Collect$$libinit$$00000031) for __rt_lib_init_return
+    libinit.o(.ARM.Collect$$libinit$$00000000) refers (Special) to libinit2.o(.ARM.Collect$$libinit$$0000001B) for __rt_lib_init_signal_1
+    libinit.o(.ARM.Collect$$libinit$$00000000) refers (Special) to libinit2.o(.ARM.Collect$$libinit$$00000023) for __rt_lib_init_stdio_1
+    libinit.o(.ARM.Collect$$libinit$$00000000) refers (Special) to libinit2.o(.ARM.Collect$$libinit$$0000000A) for __rt_lib_init_user_alloc_1
+    libspace.o(.text) refers to libspace.o(.bss) for __libspace_start
+    rtexit.o(.ARM.Collect$$rtexit$$00000000) refers (Special) to rtexit2.o(.ARM.Collect$$rtexit$$00000004) for __rt_exit_exit
+    rtexit.o(.ARM.Collect$$rtexit$$00000000) refers (Special) to rtexit2.o(.ARM.Collect$$rtexit$$00000003) for __rt_exit_ls
+    rtexit.o(.ARM.Collect$$rtexit$$00000000) refers (Special) to rtexit2.o(.ARM.Collect$$rtexit$$00000002) for __rt_exit_prels_1
+    rtexit.o(.ARM.exidx) refers (Special) to rtexit2.o(.ARM.Collect$$rtexit$$00000004) for __rt_exit_exit
+    rtexit.o(.ARM.exidx) refers (Special) to rtexit2.o(.ARM.Collect$$rtexit$$00000003) for __rt_exit_ls
+    rtexit.o(.ARM.exidx) refers (Special) to rtexit2.o(.ARM.Collect$$rtexit$$00000002) for __rt_exit_prels_1
+    rtexit.o(.ARM.exidx) refers to rtexit.o(.ARM.Collect$$rtexit$$00000000) for .ARM.Collect$$rtexit$$00000000
+    libinit2.o(.ARM.Collect$$libinit$$0000000E) refers to libinit2.o(.ARM.Collect$$libinit$$0000000D) for .ARM.Collect$$libinit$$0000000D
+    libinit2.o(.ARM.Collect$$libinit$$00000010) refers to libinit2.o(.ARM.Collect$$libinit$$0000000D) for .ARM.Collect$$libinit$$0000000D
+    libinit2.o(.ARM.Collect$$libinit$$00000012) refers to libinit2.o(.ARM.Collect$$libinit$$0000000D) for .ARM.Collect$$libinit$$0000000D
+    libinit2.o(.ARM.Collect$$libinit$$00000014) refers to libinit2.o(.ARM.Collect$$libinit$$0000000D) for .ARM.Collect$$libinit$$0000000D
+    libinit2.o(.ARM.Collect$$libinit$$00000016) refers to libinit2.o(.ARM.Collect$$libinit$$0000000D) for .ARM.Collect$$libinit$$0000000D
+    libinit2.o(.ARM.Collect$$libinit$$00000024) refers to argv_veneer.o(.emb_text) for __ARM_argv_veneer
+    libinit2.o(.ARM.Collect$$libinit$$00000025) refers to argv_veneer.o(.emb_text) for __ARM_argv_veneer
+    rtexit2.o(.ARM.Collect$$rtexit$$00000003) refers to libshutdown.o(.ARM.Collect$$libshutdown$$00000000) for __rt_lib_shutdown
+    rtexit2.o(.ARM.Collect$$rtexit$$00000004) refers to sys_exit.o(.text) for _sys_exit
+    rtexit2.o(.ARM.exidx) refers to rtexit2.o(.ARM.Collect$$rtexit$$00000001) for .ARM.Collect$$rtexit$$00000001
+    rtexit2.o(.ARM.exidx) refers to rtexit2.o(.ARM.Collect$$rtexit$$00000003) for .ARM.Collect$$rtexit$$00000003
+    rtexit2.o(.ARM.exidx) refers to rtexit2.o(.ARM.Collect$$rtexit$$00000004) for .ARM.Collect$$rtexit$$00000004
+    argv_veneer.o(.emb_text) refers to no_argv.o(.text) for __ARM_get_argv
+    sys_exit.o(.text) refers (Special) to use_no_semi.o(.text) for __I$use$semihosting
+    sys_exit.o(.text) refers (Special) to indicate_semi.o(.text) for __semihosting_library_function
+    _get_argv_nomalloc.o(.text) refers (Special) to hrguard.o(.text) for __heap_region$guard
+    _get_argv_nomalloc.o(.text) refers to defsig_rtmem_outer.o(.text) for __rt_SIGRTMEM
+    _get_argv_nomalloc.o(.text) refers to sys_command.o(.text) for _sys_command_string
+    libshutdown.o(.ARM.Collect$$libshutdown$$00000000) refers (Special) to libshutdown2.o(.ARM.Collect$$libshutdown$$00000006) for __rt_lib_shutdown_fp_trap_1
+    libshutdown.o(.ARM.Collect$$libshutdown$$00000000) refers (Special) to libshutdown2.o(.ARM.Collect$$libshutdown$$0000000E) for __rt_lib_shutdown_heap_1
+    libshutdown.o(.ARM.Collect$$libshutdown$$00000000) refers (Special) to libshutdown2.o(.ARM.Collect$$libshutdown$$0000000F) for __rt_lib_shutdown_return
+    libshutdown.o(.ARM.Collect$$libshutdown$$00000000) refers (Special) to libshutdown2.o(.ARM.Collect$$libshutdown$$00000009) for __rt_lib_shutdown_signal_1
+    libshutdown.o(.ARM.Collect$$libshutdown$$00000000) refers (Special) to libshutdown2.o(.ARM.Collect$$libshutdown$$00000003) for __rt_lib_shutdown_stdio_1
+    libshutdown.o(.ARM.Collect$$libshutdown$$00000000) refers (Special) to libshutdown2.o(.ARM.Collect$$libshutdown$$0000000B) for __rt_lib_shutdown_user_alloc_1
+    sys_command.o(.text) refers (Special) to use_no_semi.o(.text) for __I$use$semihosting
+    sys_command.o(.text) refers (Special) to indicate_semi.o(.text) for __semihosting_library_function
+    defsig_rtmem_outer.o(.text) refers to defsig_rtmem_inner.o(.text) for __rt_SIGRTMEM_inner
+    defsig_rtmem_outer.o(.text) refers to defsig_exit.o(.text) for __sig_exit
+    defsig_rtmem_formal.o(.text) refers to rt_raise.o(.text) for __rt_raise
+    rt_raise.o(.text) refers to __raise.o(.text) for __raise
+    rt_raise.o(.text) refers to sys_exit.o(.text) for _sys_exit
+    defsig_exit.o(.text) refers to sys_exit.o(.text) for _sys_exit
+    defsig_rtmem_inner.o(.text) refers to defsig_general.o(.text) for __default_signal_display
+    __raise.o(.text) refers to defsig.o(CL$$defsig) for __default_signal_handler
+    defsig_general.o(.text) refers to sys_wrch.o(.text) for _ttywrch
+    sys_wrch.o(.text) refers (Special) to use_no_semi.o(.text) for __I$use$semihosting
+    sys_wrch.o(.text) refers (Special) to indicate_semi.o(.text) for __semihosting_library_function
+    defsig.o(CL$$defsig) refers to defsig_rtmem_inner.o(.text) for __rt_SIGRTMEM_inner
+    defsig_abrt_inner.o(.text) refers to defsig_general.o(.text) for __default_signal_display
+    defsig_fpe_inner.o(.text) refers to defsig_general.o(.text) for __default_signal_display
+    defsig_rtred_inner.o(.text) refers to defsig_general.o(.text) for __default_signal_display
+    defsig_stak_inner.o(.text) refers to defsig_general.o(.text) for __default_signal_display
+    defsig_pvfn_inner.o(.text) refers to defsig_general.o(.text) for __default_signal_display
+    defsig_cppl_inner.o(.text) refers to defsig_general.o(.text) for __default_signal_display
+    defsig_segv_inner.o(.text) refers to defsig_general.o(.text) for __default_signal_display
+    defsig_other.o(.text) refers to defsig_general.o(.text) for __default_signal_display
+
+
+==============================================================================
+
+Removing Unused input sections from the image.
+
+    Removing print.o(.text), (240 bytes).
+    Removing st7735.o(i.Output_Clear), (10 bytes).
+    Removing st7735.o(i.Output_Color), (12 bytes).
+    Removing st7735.o(i.Output_Init), (16 bytes).
+    Removing st7735.o(i.Output_Off), (8 bytes).
+    Removing st7735.o(i.Output_On), (8 bytes).
+    Removing st7735.o(i.ST7735_Color565), (24 bytes).
+    Removing st7735.o(i.ST7735_DrawChar), (268 bytes).
+    Removing st7735.o(i.ST7735_DrawFastHLine), (124 bytes).
+    Removing st7735.o(i.ST7735_DrawFastVLine), (124 bytes).
+    Removing st7735.o(i.ST7735_InitB), (40 bytes).
+    Removing st7735.o(i.ST7735_InvertDisplay), (22 bytes).
+    Removing st7735.o(i.ST7735_OutUDec), (140 bytes).
+    Removing st7735.o(i.ST7735_PlotBar), (88 bytes).
+    Removing st7735.o(i.ST7735_PlotClear), (92 bytes).
+    Removing st7735.o(i.ST7735_PlotLine), (264 bytes).
+    Removing st7735.o(i.ST7735_PlotNext), (32 bytes).
+    Removing st7735.o(i.ST7735_PlotNextErase), (64 bytes).
+    Removing st7735.o(i.ST7735_PlotPoint), (152 bytes).
+    Removing st7735.o(i.ST7735_PlotPoints), (172 bytes).
+    Removing st7735.o(i.ST7735_PlotdBfs), (60 bytes).
+    Removing st7735.o(i.ST7735_SetRotation), (212 bytes).
+    Removing st7735.o(i.ST7735_SetTextColor), (12 bytes).
+    Removing st7735.o(i.ST7735_SwapColor), (18 bytes).
+    Removing st7735.o(i.ferror), (8 bytes).
+    Removing st7735.o(i.fgetc), (6 bytes).
+    Removing st7735.o(i.fillmessage), (72 bytes).
+    Removing st7735.o(i.fputc), (16 bytes).
+    Removing st7735.o(.bss), (12 bytes).
+    Removing lab9.o(i.Rect_Collision), (84 bytes).
+
+30 unused section(s) (total 2400 bytes) removed from the image.
+
+==============================================================================
+
+Image Symbol Table
+
+    Local Symbols
+
+    Symbol Name                              Value     Ov Type        Size  Object(Section)
+
+    RESET                                    0x00000000   Section      644  startup.o(RESET)
+    ../clib/angel/boardlib.s                 0x00000000   Number         0  boardshut.o ABSOLUTE
+    ../clib/angel/boardlib.s                 0x00000000   Number         0  boardinit2.o ABSOLUTE
+    ../clib/angel/boardlib.s                 0x00000000   Number         0  boardinit1.o ABSOLUTE
+    ../clib/angel/boardlib.s                 0x00000000   Number         0  boardinit3.o ABSOLUTE
+    ../clib/angel/handlers.s                 0x00000000   Number         0  __scatter_copy.o ABSOLUTE
+    ../clib/angel/handlers.s                 0x00000000   Number         0  __scatter_zi.o ABSOLUTE
+    ../clib/angel/kernel.s                   0x00000000   Number         0  rtexit2.o ABSOLUTE
+    ../clib/angel/kernel.s                   0x00000000   Number         0  rtentry.o ABSOLUTE
+    ../clib/angel/kernel.s                   0x00000000   Number         0  rtentry2.o ABSOLUTE
+    ../clib/angel/kernel.s                   0x00000000   Number         0  rtexit.o ABSOLUTE
+    ../clib/angel/kernel.s                   0x00000000   Number         0  rtentry4.o ABSOLUTE
+    ../clib/angel/rt.s                       0x00000000   Number         0  rt_raise.o ABSOLUTE
+    ../clib/angel/scatter.s                  0x00000000   Number         0  __scatter.o ABSOLUTE
+    ../clib/angel/startup.s                  0x00000000   Number         0  __main.o ABSOLUTE
+    ../clib/angel/sys.s                      0x00000000   Number         0  indicate_semi.o ABSOLUTE
+    ../clib/angel/sys.s                      0x00000000   Number         0  use_no_semi.o ABSOLUTE
+    ../clib/angel/sys.s                      0x00000000   Number         0  sys_stackheap_outer.o ABSOLUTE
+    ../clib/angel/sys.s                      0x00000000   Number         0  libspace.o ABSOLUTE
+    ../clib/angel/sysapp.c                   0x00000000   Number         0  sys_exit.o ABSOLUTE
+    ../clib/angel/sysapp.c                   0x00000000   Number         0  sys_command.o ABSOLUTE
+    ../clib/angel/sysapp.c                   0x00000000   Number         0  sys_wrch.o ABSOLUTE
+    ../clib/armsys.c                         0x00000000   Number         0  argv_veneer.o ABSOLUTE
+    ../clib/armsys.c                         0x00000000   Number         0  argv_veneer.o ABSOLUTE
+    ../clib/armsys.c                         0x00000000   Number         0  no_argv.o ABSOLUTE
+    ../clib/armsys.c                         0x00000000   Number         0  _get_argv_nomalloc.o ABSOLUTE
+    ../clib/heapalloc.c                      0x00000000   Number         0  hrguard.o ABSOLUTE
+    ../clib/heapaux.c                        0x00000000   Number         0  heapauxi.o ABSOLUTE
+    ../clib/libinit.s                        0x00000000   Number         0  libshutdown.o ABSOLUTE
+    ../clib/libinit.s                        0x00000000   Number         0  libinit2.o ABSOLUTE
+    ../clib/libinit.s                        0x00000000   Number         0  libinit.o ABSOLUTE
+    ../clib/libinit.s                        0x00000000   Number         0  libshutdown2.o ABSOLUTE
+    ../clib/memcpset.s                       0x00000000   Number         0  rt_memcpy_w.o ABSOLUTE
+    ../clib/signal.c                         0x00000000   Number         0  defsig_rtmem_inner.o ABSOLUTE
+    ../clib/signal.c                         0x00000000   Number         0  defsig_other.o ABSOLUTE
+    ../clib/signal.c                         0x00000000   Number         0  defsig_segv_inner.o ABSOLUTE
+    ../clib/signal.c                         0x00000000   Number         0  defsig_pvfn_inner.o ABSOLUTE
+    ../clib/signal.c                         0x00000000   Number         0  defsig_cppl_inner.o ABSOLUTE
+    ../clib/signal.c                         0x00000000   Number         0  defsig_stak_inner.o ABSOLUTE
+    ../clib/signal.c                         0x00000000   Number         0  defsig_rtmem_outer.o ABSOLUTE
+    ../clib/signal.c                         0x00000000   Number         0  defsig_rtred_inner.o ABSOLUTE
+    ../clib/signal.c                         0x00000000   Number         0  defsig_fpe_inner.o ABSOLUTE
+    ../clib/signal.c                         0x00000000   Number         0  defsig_abrt_inner.o ABSOLUTE
+    ../clib/signal.c                         0x00000000   Number         0  defsig_rtmem_formal.o ABSOLUTE
+    ../clib/signal.c                         0x00000000   Number         0  defsig_general.o ABSOLUTE
+    ../clib/signal.c                         0x00000000   Number         0  __raise.o ABSOLUTE
+    ../clib/signal.c                         0x00000000   Number         0  defsig_exit.o ABSOLUTE
+    ../clib/signal.s                         0x00000000   Number         0  defsig.o ABSOLUTE
+    ../clib/stdlib.c                         0x00000000   Number         0  exit.o ABSOLUTE
+    ../fplib/fpinit.s                        0x00000000   Number         0  fpinit.o ABSOLUTE
+    ADC.c                                    0x00000000   Number         0  adc.o ABSOLUTE
+    FiFo.c                                   0x00000000   Number         0  fifo.o ABSOLUTE
+    LCD.s                                    0x00000000   Number         0  lcd.o ABSOLUTE
+    Lab9.c                                   0x00000000   Number         0  lab9.o ABSOLUTE
+    Print.s                                  0x00000000   Number         0  print.o ABSOLUTE
+    ST7735.c                                 0x00000000   Number         0  st7735.o ABSOLUTE
+    TExaS.c                                  0x00000000   Number         0  texas.o ABSOLUTE
+    UART.c                                   0x00000000   Number         0  uart.o ABSOLUTE
+    dc.s                                     0x00000000   Number         0  dc.o ABSOLUTE
+    startup.s                                0x00000000   Number         0  startup.o ABSOLUTE
+    !!!main                                  0x00000284   Section        8  __main.o(!!!main)
+    !!!scatter                               0x0000028c   Section       52  __scatter.o(!!!scatter)
+    !!handler_copy                           0x000002c0   Section       26  __scatter_copy.o(!!handler_copy)
+    !!handler_zi                             0x000002dc   Section       28  __scatter_zi.o(!!handler_zi)
+    .ARM.Collect$$libinit$$00000000          0x000002f8   Section        2  libinit.o(.ARM.Collect$$libinit$$00000000)
+    .ARM.Collect$$libinit$$00000002          0x000002fa   Section        0  libinit2.o(.ARM.Collect$$libinit$$00000002)
+    .ARM.Collect$$libinit$$00000008          0x000002fa   Section        0  libinit2.o(.ARM.Collect$$libinit$$00000008)
+    .ARM.Collect$$libinit$$0000000A          0x000002fa   Section        0  libinit2.o(.ARM.Collect$$libinit$$0000000A)
+    .ARM.Collect$$libinit$$0000000C          0x000002fa   Section        0  libinit2.o(.ARM.Collect$$libinit$$0000000C)
+    .ARM.Collect$$libinit$$0000000F          0x000002fa   Section        0  libinit2.o(.ARM.Collect$$libinit$$0000000F)
+    .ARM.Collect$$libinit$$00000011          0x000002fa   Section        0  libinit2.o(.ARM.Collect$$libinit$$00000011)
+    .ARM.Collect$$libinit$$00000013          0x000002fa   Section        0  libinit2.o(.ARM.Collect$$libinit$$00000013)
+    .ARM.Collect$$libinit$$00000015          0x000002fa   Section        0  libinit2.o(.ARM.Collect$$libinit$$00000015)
+    .ARM.Collect$$libinit$$00000017          0x000002fa   Section        0  libinit2.o(.ARM.Collect$$libinit$$00000017)
+    .ARM.Collect$$libinit$$00000019          0x000002fa   Section        0  libinit2.o(.ARM.Collect$$libinit$$00000019)
+    .ARM.Collect$$libinit$$0000001B          0x000002fa   Section        0  libinit2.o(.ARM.Collect$$libinit$$0000001B)
+    .ARM.Collect$$libinit$$0000001D          0x000002fa   Section        0  libinit2.o(.ARM.Collect$$libinit$$0000001D)
+    .ARM.Collect$$libinit$$0000001F          0x000002fa   Section        0  libinit2.o(.ARM.Collect$$libinit$$0000001F)
+    .ARM.Collect$$libinit$$00000021          0x000002fa   Section        0  libinit2.o(.ARM.Collect$$libinit$$00000021)
+    .ARM.Collect$$libinit$$00000023          0x000002fa   Section        0  libinit2.o(.ARM.Collect$$libinit$$00000023)
+    .ARM.Collect$$libinit$$0000002A          0x000002fa   Section        0  libinit2.o(.ARM.Collect$$libinit$$0000002A)
+    .ARM.Collect$$libinit$$0000002C          0x000002fa   Section        0  libinit2.o(.ARM.Collect$$libinit$$0000002C)
+    .ARM.Collect$$libinit$$0000002E          0x000002fa   Section        0  libinit2.o(.ARM.Collect$$libinit$$0000002E)
+    .ARM.Collect$$libinit$$00000030          0x000002fa   Section        0  libinit2.o(.ARM.Collect$$libinit$$00000030)
+    .ARM.Collect$$libinit$$00000031          0x000002fa   Section        2  libinit2.o(.ARM.Collect$$libinit$$00000031)
+    .ARM.Collect$$libshutdown$$00000000      0x000002fc   Section        2  libshutdown.o(.ARM.Collect$$libshutdown$$00000000)
+    .ARM.Collect$$libshutdown$$00000003      0x000002fe   Section        0  libshutdown2.o(.ARM.Collect$$libshutdown$$00000003)
+    .ARM.Collect$$libshutdown$$00000006      0x000002fe   Section        0  libshutdown2.o(.ARM.Collect$$libshutdown$$00000006)
+    .ARM.Collect$$libshutdown$$00000009      0x000002fe   Section        0  libshutdown2.o(.ARM.Collect$$libshutdown$$00000009)
+    .ARM.Collect$$libshutdown$$0000000B      0x000002fe   Section        0  libshutdown2.o(.ARM.Collect$$libshutdown$$0000000B)
+    .ARM.Collect$$libshutdown$$0000000E      0x000002fe   Section        0  libshutdown2.o(.ARM.Collect$$libshutdown$$0000000E)
+    .ARM.Collect$$libshutdown$$0000000F      0x000002fe   Section        2  libshutdown2.o(.ARM.Collect$$libshutdown$$0000000F)
+    .ARM.Collect$$rtentry$$00000000          0x00000300   Section        0  rtentry.o(.ARM.Collect$$rtentry$$00000000)
+    .ARM.Collect$$rtentry$$00000002          0x00000300   Section        0  rtentry2.o(.ARM.Collect$$rtentry$$00000002)
+    .ARM.Collect$$rtentry$$00000004          0x00000300   Section        6  rtentry4.o(.ARM.Collect$$rtentry$$00000004)
+    .ARM.Collect$$rtentry$$00000009          0x00000306   Section        0  rtentry2.o(.ARM.Collect$$rtentry$$00000009)
+    .ARM.Collect$$rtentry$$0000000A          0x00000306   Section        4  rtentry2.o(.ARM.Collect$$rtentry$$0000000A)
+    .ARM.Collect$$rtentry$$0000000C          0x0000030a   Section        0  rtentry2.o(.ARM.Collect$$rtentry$$0000000C)
+    .ARM.Collect$$rtentry$$0000000D          0x0000030a   Section        8  rtentry2.o(.ARM.Collect$$rtentry$$0000000D)
+    .ARM.Collect$$rtexit$$00000000           0x00000312   Section        2  rtexit.o(.ARM.Collect$$rtexit$$00000000)
+    .ARM.Collect$$rtexit$$00000002           0x00000314   Section        0  rtexit2.o(.ARM.Collect$$rtexit$$00000002)
+    .ARM.Collect$$rtexit$$00000003           0x00000314   Section        4  rtexit2.o(.ARM.Collect$$rtexit$$00000003)
+    .ARM.Collect$$rtexit$$00000004           0x00000318   Section        6  rtexit2.o(.ARM.Collect$$rtexit$$00000004)
+    .text                                    0x00000320   Section       48  startup.o(.text)
+    .text                                    0x00000350   Section       76  lcd.o(.text)
+    .text                                    0x0000039c   Section        0  texas.o(.text)
+    .text                                    0x0000083c   Section      100  rt_memcpy_w.o(.text)
+    .text                                    0x000008a0   Section        0  heapauxi.o(.text)
+    .text                                    0x000008a6   Section       74  sys_stackheap_outer.o(.text)
+    .text                                    0x000008f0   Section        0  exit.o(.text)
+    .text                                    0x000008fc   Section        8  libspace.o(.text)
+    .text                                    0x00000904   Section        0  sys_exit.o(.text)
+    .text                                    0x00000910   Section        2  use_no_semi.o(.text)
+    .text                                    0x00000912   Section        0  indicate_semi.o(.text)
+    i.ADC_In89                               0x00000914   Section        0  adc.o(i.ADC_In89)
+    i.ADC_Init                               0x0000094c   Section        0  adc.o(i.ADC_Init)
+    i.Arena_Jump                             0x00000a2c   Section        0  lab9.o(i.Arena_Jump)
+    i.Arena_Move_Player                      0x00000abc   Section        0  lab9.o(i.Arena_Move_Player)
+    i.Battle_Arena                           0x00000adc   Section        0  lab9.o(i.Battle_Arena)
+    i.Battle_Arena_Collision                 0x00000b4c   Section        0  lab9.o(i.Battle_Arena_Collision)
+    i.Battle_Arena_Win                       0x00000bd4   Section        0  lab9.o(i.Battle_Arena_Win)
+    i.BulletC_Handler                        0x00000e10   Section        0  lab9.o(i.BulletC_Handler)
+    i.Bullet_Arena_Collisions                0x00000e24   Section        0  lab9.o(i.Bullet_Arena_Collisions)
+    i.Bullet_Init                            0x00000e9c   Section        0  lab9.o(i.Bullet_Init)
+    i.ButtonC1_Handler                       0x000010cc   Section        0  lab9.o(i.ButtonC1_Handler)
+    i.ButtonC2_Handler                       0x00001118   Section        0  lab9.o(i.ButtonC2_Handler)
+    i.ButtonC3_Handler                       0x00001164   Section        0  lab9.o(i.ButtonC3_Handler)
+    i.Button_Handler                         0x00001168   Section        0  lab9.o(i.Button_Handler)
+    i.Button_Init                            0x000011e0   Section        0  lab9.o(i.Button_Init)
+    i.Button_Pressed                         0x0000120c   Section        0  lab9.o(i.Button_Pressed)
+    i.Change_Button_Bitmap                   0x0000129c   Section        0  lab9.o(i.Change_Button_Bitmap)
+    i.Change_Rect                            0x000012c0   Section        0  lab9.o(i.Change_Rect)
+    i.Change_Sound                           0x000012d2   Section        0  lab9.o(i.Change_Sound)
+    i.Change_Sprite                          0x00001308   Section        0  lab9.o(i.Change_Sprite)
+    i.Collision_Checker_Platform             0x00001380   Section        0  lab9.o(i.Collision_Checker_Platform)
+    i.Collision_Checker_Sprite               0x00001428   Section        0  lab9.o(i.Collision_Checker_Sprite)
+    i.Collision_Handler_Platform             0x000014bc   Section        0  lab9.o(i.Collision_Handler_Platform)
+    i.Collision_Handlers_Sprite              0x0000155c   Section        0  lab9.o(i.Collision_Handlers_Sprite)
+    i.Collisions                             0x000015e2   Section        0  lab9.o(i.Collisions)
+    i.Colour_Check                           0x0000162a   Section        0  lab9.o(i.Colour_Check)
+    i.ControllerButton_Init                  0x00001664   Section        0  lab9.o(i.ControllerButton_Init)
+    i.Delay1ms                               0x000016cc   Section        0  st7735.o(i.Delay1ms)
+    i.Draw_Menu                              0x000016ec   Section        0  lab9.o(i.Draw_Menu)
+    i.Draw_Rect                              0x0000176c   Section        0  lab9.o(i.Draw_Rect)
+    i.Draw_Sprite                            0x0000178a   Section        0  lab9.o(i.Draw_Sprite)
+    i.FiFo_Get                               0x000017a8   Section        0  fifo.o(i.FiFo_Get)
+    i.FiFo_Init                              0x000017e8   Section        0  fifo.o(i.FiFo_Init)
+    i.FiFo_Put                               0x000017fc   Section        0  fifo.o(i.FiFo_Put)
+    i.FrameRateDelay                         0x00001848   Section        0  lab9.o(i.FrameRateDelay)
+    i.Game_Mode                              0x0000186c   Section        0  lab9.o(i.Game_Mode)
+    i.Game_Over                              0x000018c4   Section        0  lab9.o(i.Game_Over)
+    i.Generate_Level                         0x00001990   Section        0  lab9.o(i.Generate_Level)
+    i.Generate_Race                          0x00001b40   Section        0  lab9.o(i.Generate_Race)
+    i.Gravity                                0x00001cec   Section        0  lab9.o(i.Gravity)
+    i.Gravity_Check                          0x00001d10   Section        0  lab9.o(i.Gravity_Check)
+    i.Gravity_Start                          0x00001e38   Section        0  lab9.o(i.Gravity_Start)
+    i.JetPack                                0x00001e5c   Section        0  lab9.o(i.JetPack)
+    i.JetPack_Move                           0x00001ec4   Section        0  lab9.o(i.JetPack_Move)
+    i.JetPack_Win                            0x00001f68   Section        0  lab9.o(i.JetPack_Win)
+    i.Jump_Player                            0x000020ac   Section        0  lab9.o(i.Jump_Player)
+    i.Jump_Reset                             0x00002188   Section        0  lab9.o(i.Jump_Reset)
+    i.Level_Init                             0x000021ac   Section        0  lab9.o(i.Level_Init)
+    i.Level_Up                               0x00003814   Section        0  lab9.o(i.Level_Up)
+    i.Main_Menu                              0x000038c8   Section        0  lab9.o(i.Main_Menu)
+    i.Move_Bullet                            0x00003904   Section        0  lab9.o(i.Move_Bullet)
+    i.Move_Bullet_Arena                      0x00003964   Section        0  lab9.o(i.Move_Bullet_Arena)
+    i.Move_Level_Bullets                     0x00003a1c   Section        0  lab9.o(i.Move_Level_Bullets)
+    i.Move_Level_Platforms                   0x00003a6c   Section        0  lab9.o(i.Move_Level_Platforms)
+    i.Move_Platform                          0x00003abc   Section        0  lab9.o(i.Move_Platform)
+    i.Move_Player                            0x00003b54   Section        0  lab9.o(i.Move_Player)
+    i.Move_Player_On_Platform                0x00003b84   Section        0  lab9.o(i.Move_Player_On_Platform)
+    i.Next_Level                             0x00003be0   Section        0  lab9.o(i.Next_Level)
+    i.Out_Num                                0x00003c30   Section        0  lab9.o(i.Out_Num)
+    i.Pause                                  0x00003c84   Section        0  lab9.o(i.Pause)
+    i.Platform_Gravity                       0x00003cc0   Section        0  lab9.o(i.Platform_Gravity)
+    i.PlayerC_Handler                        0x00003d24   Section        0  lab9.o(i.PlayerC_Handler)
+    i.Player_Init                            0x00003d6c   Section        0  lab9.o(i.Player_Init)
+    i.PortF_Init                             0x00003dac   Section        0  lab9.o(i.PortF_Init)
+    i.Puzzle_Mode                            0x00003e10   Section        0  lab9.o(i.Puzzle_Mode)
+    i.Race                                   0x00003e88   Section        0  lab9.o(i.Race)
+    i.Race_Move                              0x00003f6c   Section        0  lab9.o(i.Race_Move)
+    i.Race_Over                              0x00003fc4   Section        0  lab9.o(i.Race_Over)
+    i.Reset                                  0x00004124   Section        0  lab9.o(i.Reset)
+    i.Reset_Bullets                          0x00004174   Section        0  lab9.o(i.Reset_Bullets)
+    i.Reset_Players                          0x000041b8   Section        0  lab9.o(i.Reset_Players)
+    i.Return_To_Main_Menu                    0x000041dc   Section        0  lab9.o(i.Return_To_Main_Menu)
+    i.ST7735_DrawBitmap                      0x00004264   Section        0  st7735.o(i.ST7735_DrawBitmap)
+    i.ST7735_DrawCharS                       0x00004384   Section        0  st7735.o(i.ST7735_DrawCharS)
+    i.ST7735_DrawPixel                       0x00004478   Section        0  st7735.o(i.ST7735_DrawPixel)
+    i.ST7735_DrawString                      0x000044c0   Section        0  st7735.o(i.ST7735_DrawString)
+    i.ST7735_FillRect                        0x00004514   Section        0  st7735.o(i.ST7735_FillRect)
+    i.ST7735_FillScreen                      0x000045c0   Section        0  st7735.o(i.ST7735_FillScreen)
+    i.ST7735_InitR                           0x000045e4   Section        0  st7735.o(i.ST7735_InitR)
+    i.ST7735_OutChar                         0x00004660   Section        0  st7735.o(i.ST7735_OutChar)
+    i.ST7735_OutString                       0x00004734   Section        0  st7735.o(i.ST7735_OutString)
+    i.ST7735_SetCursor                       0x0000474c   Section        0  st7735.o(i.ST7735_SetCursor)
+    i.SpriteRect_Collision                   0x0000476c   Section        0  lab9.o(i.SpriteRect_Collision)
+    i.Sprite_Collision                       0x000047c2   Section        0  lab9.o(i.Sprite_Collision)
+    i.Sprite_Gravity                         0x0000482a   Section        0  lab9.o(i.Sprite_Gravity)
+    i.Sprite_Init                            0x00004894   Section        0  lab9.o(i.Sprite_Init)
+    i.Swap_Player                            0x00004c00   Section        0  lab9.o(i.Swap_Player)
+    i.SysTick_Disable                        0x00004c48   Section        0  lab9.o(i.SysTick_Disable)
+    i.SysTick_Enable                         0x00004c54   Section        0  lab9.o(i.SysTick_Enable)
+    i.SysTick_Handler                        0x00004c84   Section        0  lab9.o(i.SysTick_Handler)
+    i.SysTick_Init                           0x00004cbc   Section        0  lab9.o(i.SysTick_Init)
+    i.UART1_Handler                          0x00004cec   Section        0  uart.o(i.UART1_Handler)
+    i.UART_InChar                            0x00004d2c   Section        0  uart.o(i.UART_InChar)
+    i.UART_Init                              0x00004d44   Section        0  uart.o(i.UART_Init)
+    i.UART_OutChar                           0x00004e2c   Section        0  uart.o(i.UART_OutChar)
+    i.Update_Battle_Arena                    0x00004e44   Section        0  lab9.o(i.Update_Battle_Arena)
+    i.Update_Battle_Menu                     0x00004fa0   Section        0  lab9.o(i.Update_Battle_Menu)
+    i.Update_Menu                            0x0000503c   Section        0  lab9.o(i.Update_Menu)
+    i.Update_Race                            0x000050d8   Section        0  lab9.o(i.Update_Race)
+    i.Update_Stage                           0x00005170   Section        0  lab9.o(i.Update_Stage)
+    i.Victory_Screen                         0x0000517c   Section        0  lab9.o(i.Victory_Screen)
+    i.commandList                            0x00005278   Section        0  st7735.o(i.commandList)
+    commandList                              0x00005279   Thumb Code    86  st7735.o(i.commandList)
+    i.commonInit                             0x000052d0   Section        0  st7735.o(i.commonInit)
+    commonInit                               0x000052d1   Thumb Code   340  st7735.o(i.commonInit)
+    i.jump                                   0x00005454   Section        0  lab9.o(i.jump)
+    i.mPlatformC_Handler                     0x00005490   Section        0  lab9.o(i.mPlatformC_Handler)
+    i.main                                   0x00005558   Section        0  lab9.o(i.main)
+    i.pushColor                              0x000055ec   Section        0  st7735.o(i.pushColor)
+    pushColor                                0x000055ed   Thumb Code    18  st7735.o(i.pushColor)
+    i.rand                                   0x00005600   Section        0  lab9.o(i.rand)
+    i.setAddrWindow                          0x0000563c   Section        0  st7735.o(i.setAddrWindow)
+    setAddrWindow                            0x0000563d   Thumb Code   106  st7735.o(i.setAddrWindow)
+    i.xAxis_Move                             0x000056b0   Section        0  lab9.o(i.xAxis_Move)
+    i.xAxis_Move_Arena                       0x00005780   Section        0  lab9.o(i.xAxis_Move_Arena)
+    .constdata                               0x0000582c   Section     2018  st7735.o(.constdata)
+    Font                                     0x0000582c   Data        1275  st7735.o(.constdata)
+    Bcmd                                     0x00005d27   Data         103  st7735.o(.constdata)
+    Rcmd1                                    0x00005d8e   Data          59  st7735.o(.constdata)
+    Rcmd2green                               0x00005dc9   Data          13  st7735.o(.constdata)
+    Rcmd2red                                 0x00005dd6   Data          13  st7735.o(.constdata)
+    Rcmd3                                    0x00005de3   Data          43  st7735.o(.constdata)
+    .constdata                               0x00006010   Section     7712  lab9.o(.constdata)
+    .constdata                               0x00007e30   Section      240  texas.o(.constdata)
+    .data                                    0x20000000   Section       44  st7735.o(.data)
+    _width                                   0x2000000a   Data           2  st7735.o(.data)
+    _height                                  0x2000000c   Data           2  st7735.o(.data)
+    ColStart                                 0x20000014   Data           1  st7735.o(.data)
+    RowStart                                 0x20000015   Data           1  st7735.o(.data)
+    Rotation                                 0x20000016   Data           1  st7735.o(.data)
+    TabColor                                 0x20000017   Data           1  st7735.o(.data)
+    .data                                    0x2000002c   Section      112  lab9.o(.data)
+    .data                                    0x2000009c   Section        2  fifo.o(.data)
+    PutI                                     0x2000009c   Data           1  fifo.o(.data)
+    GetI                                     0x2000009d   Data           1  fifo.o(.data)
+    .data                                    0x200000a0   Section       48  texas.o(.data)
+    .bss                                     0x200000d0   Section     7960  lab9.o(.bss)
+    .bss                                     0x20001fe8   Section       17  fifo.o(.bss)
+    FIFO                                     0x20001fe8   Data          17  fifo.o(.bss)
+    .bss                                     0x20002000   Section       56  texas.o(.bss)
+    .bss                                     0x20002038   Section       96  libspace.o(.bss)
+    HEAP                                     0x20002098   Section        0  startup.o(HEAP)
+    STACK                                    0x20002098   Section     1024  startup.o(STACK)
+    HeapMem                                  0x20002098   Data           0  startup.o(HEAP)
+    StackMem                                 0x20002098   Data           0  startup.o(STACK)
+
+    Global Symbols
+
+    Symbol Name                              Value     Ov Type        Size  Object(Section)
+
+    BuildAttributes$$THM_ISAv4$E$P$D$K$B$S$7EM$PE$A:L22UL41UL21$X:L11$S22US41US21$IEEE1$IW$USESV6$~STKCKD$USESV7$~SHL$OSPACE$ROPI$EBA8$UX$STANDARDLIB$REQ8$PRES8$EABIv2 0x00000000   Number         0  anon$$obj.o ABSOLUTE
+    __ARM_use_no_argv                        0x00000000   Number         0  lab9.o ABSOLUTE
+    __Vectors                                0x00000000   Data           0  startup.o(RESET)
+    __ARM_exceptions_init                     - Undefined Weak Reference
+    __alloca_initialize                       - Undefined Weak Reference
+    __cpp_initialize__aeabi_                  - Undefined Weak Reference
+    __cxa_finalize                            - Undefined Weak Reference
+    __rt_locale                               - Undefined Weak Reference
+    __sigvec_lookup                           - Undefined Weak Reference
+    _atexit_init                              - Undefined Weak Reference
+    _call_atexit_fns                          - Undefined Weak Reference
+    _clock_init                               - Undefined Weak Reference
+    _fp_trap_init                             - Undefined Weak Reference
+    _fp_trap_shutdown                         - Undefined Weak Reference
+    _get_lc_collate                           - Undefined Weak Reference
+    _get_lc_ctype                             - Undefined Weak Reference
+    _get_lc_monetary                          - Undefined Weak Reference
+    _get_lc_numeric                           - Undefined Weak Reference
+    _get_lc_time                              - Undefined Weak Reference
+    _getenv_init                              - Undefined Weak Reference
+    _handle_redirection                       - Undefined Weak Reference
+    _init_alloc                               - Undefined Weak Reference
+    _init_user_alloc                          - Undefined Weak Reference
+    _initio                                   - Undefined Weak Reference
+    _rand_init                                - Undefined Weak Reference
+    _signal_finish                            - Undefined Weak Reference
+    _signal_init                              - Undefined Weak Reference
+    _terminate_alloc                          - Undefined Weak Reference
+    _terminate_user_alloc                     - Undefined Weak Reference
+    _terminateio                              - Undefined Weak Reference
+    Reset_Handler                            0x0000026d   Thumb Code     0  startup.o(RESET)
+    NMI_Handler                              0x00000271   Thumb Code     2  startup.o(RESET)
+    HardFault_Handler                        0x00000273   Thumb Code     2  startup.o(RESET)
+    MemManage_Handler                        0x00000275   Thumb Code     2  startup.o(RESET)
+    BusFault_Handler                         0x00000277   Thumb Code     2  startup.o(RESET)
+    UsageFault_Handler                       0x00000279   Thumb Code     2  startup.o(RESET)
+    SVC_Handler                              0x0000027b   Thumb Code     2  startup.o(RESET)
+    DebugMon_Handler                         0x0000027d   Thumb Code     2  startup.o(RESET)
+    PendSV_Handler                           0x0000027f   Thumb Code     2  startup.o(RESET)
+    ADC0Seq0_Handler                         0x00000283   Thumb Code     0  startup.o(RESET)
+    ADC0Seq1_Handler                         0x00000283   Thumb Code     0  startup.o(RESET)
+    ADC0Seq2_Handler                         0x00000283   Thumb Code     0  startup.o(RESET)
+    ADC0Seq3_Handler                         0x00000283   Thumb Code     0  startup.o(RESET)
+    ADC1Seq0_Handler                         0x00000283   Thumb Code     0  startup.o(RESET)
+    ADC1Seq1_Handler                         0x00000283   Thumb Code     0  startup.o(RESET)
+    ADC1Seq2_Handler                         0x00000283   Thumb Code     0  startup.o(RESET)
+    ADC1Seq3_Handler                         0x00000283   Thumb Code     0  startup.o(RESET)
+    CAN0_Handler                             0x00000283   Thumb Code     0  startup.o(RESET)
+    CAN1_Handler                             0x00000283   Thumb Code     0  startup.o(RESET)
+    CAN2_Handler                             0x00000283   Thumb Code     0  startup.o(RESET)
+    Comp0_Handler                            0x00000283   Thumb Code     0  startup.o(RESET)
+    Comp1_Handler                            0x00000283   Thumb Code     0  startup.o(RESET)
+    Comp2_Handler                            0x00000283   Thumb Code     0  startup.o(RESET)
+    Ethernet_Handler                         0x00000283   Thumb Code     0  startup.o(RESET)
+    ExtBus_Handler                           0x00000283   Thumb Code     0  startup.o(RESET)
+    FPU_Handler                              0x00000283   Thumb Code     0  startup.o(RESET)
+    Fan0_Handler                             0x00000283   Thumb Code     0  startup.o(RESET)
+    FlashCtl_Handler                         0x00000283   Thumb Code     0  startup.o(RESET)
+    GPIOPortA_Handler                        0x00000283   Thumb Code     0  startup.o(RESET)
+    GPIOPortB_Handler                        0x00000283   Thumb Code     0  startup.o(RESET)
+    GPIOPortC_Handler                        0x00000283   Thumb Code     0  startup.o(RESET)
+    GPIOPortD_Handler                        0x00000283   Thumb Code     0  startup.o(RESET)
+    GPIOPortE_Handler                        0x00000283   Thumb Code     0  startup.o(RESET)
+    GPIOPortF_Handler                        0x00000283   Thumb Code     0  startup.o(RESET)
+    GPIOPortG_Handler                        0x00000283   Thumb Code     0  startup.o(RESET)
+    GPIOPortH_Handler                        0x00000283   Thumb Code     0  startup.o(RESET)
+    GPIOPortJ_Handler                        0x00000283   Thumb Code     0  startup.o(RESET)
+    GPIOPortK_Handler                        0x00000283   Thumb Code     0  startup.o(RESET)
+    GPIOPortL_Handler                        0x00000283   Thumb Code     0  startup.o(RESET)
+    GPIOPortM_Handler                        0x00000283   Thumb Code     0  startup.o(RESET)
+    GPIOPortN_Handler                        0x00000283   Thumb Code     0  startup.o(RESET)
+    GPIOPortP1_Handler                       0x00000283   Thumb Code     0  startup.o(RESET)
+    GPIOPortP2_Handler                       0x00000283   Thumb Code     0  startup.o(RESET)
+    GPIOPortP3_Handler                       0x00000283   Thumb Code     0  startup.o(RESET)
+    GPIOPortP4_Handler                       0x00000283   Thumb Code     0  startup.o(RESET)
+    GPIOPortP5_Handler                       0x00000283   Thumb Code     0  startup.o(RESET)
+    GPIOPortP6_Handler                       0x00000283   Thumb Code     0  startup.o(RESET)
+    GPIOPortP7_Handler                       0x00000283   Thumb Code     0  startup.o(RESET)
+    GPIOPortP_Handler                        0x00000283   Thumb Code     0  startup.o(RESET)
+    GPIOPortQ1_Handler                       0x00000283   Thumb Code     0  startup.o(RESET)
+    GPIOPortQ2_Handler                       0x00000283   Thumb Code     0  startup.o(RESET)
+    GPIOPortQ3_Handler                       0x00000283   Thumb Code     0  startup.o(RESET)
+    GPIOPortQ4_Handler                       0x00000283   Thumb Code     0  startup.o(RESET)
+    GPIOPortQ5_Handler                       0x00000283   Thumb Code     0  startup.o(RESET)
+    GPIOPortQ6_Handler                       0x00000283   Thumb Code     0  startup.o(RESET)
+    GPIOPortQ7_Handler                       0x00000283   Thumb Code     0  startup.o(RESET)
+    GPIOPortQ_Handler                        0x00000283   Thumb Code     0  startup.o(RESET)
+    GPIOPortR_Handler                        0x00000283   Thumb Code     0  startup.o(RESET)
+    GPIOPortS_Handler                        0x00000283   Thumb Code     0  startup.o(RESET)
+    Hibernate_Handler                        0x00000283   Thumb Code     0  startup.o(RESET)
+    I2C0_Handler                             0x00000283   Thumb Code     0  startup.o(RESET)
+    I2C1_Handler                             0x00000283   Thumb Code     0  startup.o(RESET)
+    I2C2_Handler                             0x00000283   Thumb Code     0  startup.o(RESET)
+    I2C3_Handler                             0x00000283   Thumb Code     0  startup.o(RESET)
+    I2C4_Handler                             0x00000283   Thumb Code     0  startup.o(RESET)
+    I2C5_Handler                             0x00000283   Thumb Code     0  startup.o(RESET)
+    I2S0_Handler                             0x00000283   Thumb Code     0  startup.o(RESET)
+    LPC0_Handler                             0x00000283   Thumb Code     0  startup.o(RESET)
+    PECI0_Handler                            0x00000283   Thumb Code     0  startup.o(RESET)
+    PWM0Fault_Handler                        0x00000283   Thumb Code     0  startup.o(RESET)
+    PWM0Generator0_Handler                   0x00000283   Thumb Code     0  startup.o(RESET)
+    PWM0Generator1_Handler                   0x00000283   Thumb Code     0  startup.o(RESET)
+    PWM0Generator2_Handler                   0x00000283   Thumb Code     0  startup.o(RESET)
+    PWM0Generator3_Handler                   0x00000283   Thumb Code     0  startup.o(RESET)
+    PWM1Fault_Handler                        0x00000283   Thumb Code     0  startup.o(RESET)
+    PWM1Generator0_Handler                   0x00000283   Thumb Code     0  startup.o(RESET)
+    PWM1Generator1_Handler                   0x00000283   Thumb Code     0  startup.o(RESET)
+    PWM1Generator2_Handler                   0x00000283   Thumb Code     0  startup.o(RESET)
+    PWM1Generator3_Handler                   0x00000283   Thumb Code     0  startup.o(RESET)
+    Quadrature0_Handler                      0x00000283   Thumb Code     0  startup.o(RESET)
+    Quadrature1_Handler                      0x00000283   Thumb Code     0  startup.o(RESET)
+    Quadrature2_Handler                      0x00000283   Thumb Code     0  startup.o(RESET)
+    SSI0_Handler                             0x00000283   Thumb Code     0  startup.o(RESET)
+    SSI1_Handler                             0x00000283   Thumb Code     0  startup.o(RESET)
+    SSI2_Handler                             0x00000283   Thumb Code     0  startup.o(RESET)
+    SSI3_Handler                             0x00000283   Thumb Code     0  startup.o(RESET)
+    SysCtl_Handler                           0x00000283   Thumb Code     0  startup.o(RESET)
+    Timer0A_Handler                          0x00000283   Thumb Code     0  startup.o(RESET)
+    Timer0B_Handler                          0x00000283   Thumb Code     0  startup.o(RESET)
+    Timer1A_Handler                          0x00000283   Thumb Code     0  startup.o(RESET)
+    Timer1B_Handler                          0x00000283   Thumb Code     0  startup.o(RESET)
+    Timer2A_Handler                          0x00000283   Thumb Code     0  startup.o(RESET)
+    Timer2B_Handler                          0x00000283   Thumb Code     0  startup.o(RESET)
+    Timer3A_Handler                          0x00000283   Thumb Code     0  startup.o(RESET)
+    Timer3B_Handler                          0x00000283   Thumb Code     0  startup.o(RESET)
+    Timer4B_Handler                          0x00000283   Thumb Code     0  startup.o(RESET)
+    Timer5B_Handler                          0x00000283   Thumb Code     0  startup.o(RESET)
+    UART0_Handler                            0x00000283   Thumb Code     0  startup.o(RESET)
+    UART2_Handler                            0x00000283   Thumb Code     0  startup.o(RESET)
+    UART3_Handler                            0x00000283   Thumb Code     0  startup.o(RESET)
+    UART4_Handler                            0x00000283   Thumb Code     0  startup.o(RESET)
+    UART5_Handler                            0x00000283   Thumb Code     0  startup.o(RESET)
+    UART6_Handler                            0x00000283   Thumb Code     0  startup.o(RESET)
+    UART7_Handler                            0x00000283   Thumb Code     0  startup.o(RESET)
+    USB0_Handler                             0x00000283   Thumb Code     0  startup.o(RESET)
+    WDT_Handler                              0x00000283   Thumb Code     0  startup.o(RESET)
+    WideTimer0A_Handler                      0x00000283   Thumb Code     0  startup.o(RESET)
+    WideTimer0B_Handler                      0x00000283   Thumb Code     0  startup.o(RESET)
+    WideTimer1A_Handler                      0x00000283   Thumb Code     0  startup.o(RESET)
+    WideTimer1B_Handler                      0x00000283   Thumb Code     0  startup.o(RESET)
+    WideTimer2A_Handler                      0x00000283   Thumb Code     0  startup.o(RESET)
+    WideTimer2B_Handler                      0x00000283   Thumb Code     0  startup.o(RESET)
+    WideTimer3A_Handler                      0x00000283   Thumb Code     0  startup.o(RESET)
+    WideTimer3B_Handler                      0x00000283   Thumb Code     0  startup.o(RESET)
+    WideTimer4A_Handler                      0x00000283   Thumb Code     0  startup.o(RESET)
+    WideTimer4B_Handler                      0x00000283   Thumb Code     0  startup.o(RESET)
+    WideTimer5A_Handler                      0x00000283   Thumb Code     0  startup.o(RESET)
+    WideTimer5B_Handler                      0x00000283   Thumb Code     0  startup.o(RESET)
+    uDMA_Error                               0x00000283   Thumb Code     0  startup.o(RESET)
+    uDMA_Handler                             0x00000283   Thumb Code     0  startup.o(RESET)
+    __main                                   0x00000285   Thumb Code     8  __main.o(!!!main)
+    __scatterload                            0x0000028d   Thumb Code     0  __scatter.o(!!!scatter)
+    __scatterload_rt2                        0x0000028d   Thumb Code    44  __scatter.o(!!!scatter)
+    __scatterload_rt2_thumb_only             0x0000028d   Thumb Code     0  __scatter.o(!!!scatter)
+    __scatterload_null                       0x0000029b   Thumb Code     0  __scatter.o(!!!scatter)
+    __scatterload_copy                       0x000002c1   Thumb Code    26  __scatter_copy.o(!!handler_copy)
+    __scatterload_zeroinit                   0x000002dd   Thumb Code    28  __scatter_zi.o(!!handler_zi)
+    __rt_lib_init                            0x000002f9   Thumb Code     0  libinit.o(.ARM.Collect$$libinit$$00000000)
+    __rt_lib_init_alloca_1                   0x000002fb   Thumb Code     0  libinit2.o(.ARM.Collect$$libinit$$0000002C)
+    __rt_lib_init_argv_1                     0x000002fb   Thumb Code     0  libinit2.o(.ARM.Collect$$libinit$$0000002A)
+    __rt_lib_init_atexit_1                   0x000002fb   Thumb Code     0  libinit2.o(.ARM.Collect$$libinit$$00000019)
+    __rt_lib_init_clock_1                    0x000002fb   Thumb Code     0  libinit2.o(.ARM.Collect$$libinit$$0000001F)
+    __rt_lib_init_cpp_1                      0x000002fb   Thumb Code     0  libinit2.o(.ARM.Collect$$libinit$$00000030)
+    __rt_lib_init_exceptions_1               0x000002fb   Thumb Code     0  libinit2.o(.ARM.Collect$$libinit$$0000002E)
+    __rt_lib_init_fp_1                       0x000002fb   Thumb Code     0  libinit2.o(.ARM.Collect$$libinit$$00000002)
+    __rt_lib_init_fp_trap_1                  0x000002fb   Thumb Code     0  libinit2.o(.ARM.Collect$$libinit$$0000001D)
+    __rt_lib_init_getenv_1                   0x000002fb   Thumb Code     0  libinit2.o(.ARM.Collect$$libinit$$00000021)
+    __rt_lib_init_heap_1                     0x000002fb   Thumb Code     0  libinit2.o(.ARM.Collect$$libinit$$00000008)
+    __rt_lib_init_lc_collate_1               0x000002fb   Thumb Code     0  libinit2.o(.ARM.Collect$$libinit$$0000000F)
+    __rt_lib_init_lc_ctype_1                 0x000002fb   Thumb Code     0  libinit2.o(.ARM.Collect$$libinit$$00000011)
+    __rt_lib_init_lc_monetary_1              0x000002fb   Thumb Code     0  libinit2.o(.ARM.Collect$$libinit$$00000013)
+    __rt_lib_init_lc_numeric_1               0x000002fb   Thumb Code     0  libinit2.o(.ARM.Collect$$libinit$$00000015)
+    __rt_lib_init_lc_time_1                  0x000002fb   Thumb Code     0  libinit2.o(.ARM.Collect$$libinit$$00000017)
+    __rt_lib_init_rand_1                     0x000002fb   Thumb Code     0  libinit2.o(.ARM.Collect$$libinit$$0000000C)
+    __rt_lib_init_return                     0x000002fb   Thumb Code     0  libinit2.o(.ARM.Collect$$libinit$$00000031)
+    __rt_lib_init_signal_1                   0x000002fb   Thumb Code     0  libinit2.o(.ARM.Collect$$libinit$$0000001B)
+    __rt_lib_init_stdio_1                    0x000002fb   Thumb Code     0  libinit2.o(.ARM.Collect$$libinit$$00000023)
+    __rt_lib_init_user_alloc_1               0x000002fb   Thumb Code     0  libinit2.o(.ARM.Collect$$libinit$$0000000A)
+    __rt_lib_shutdown                        0x000002fd   Thumb Code     0  libshutdown.o(.ARM.Collect$$libshutdown$$00000000)
+    __rt_lib_shutdown_fp_trap_1              0x000002ff   Thumb Code     0  libshutdown2.o(.ARM.Collect$$libshutdown$$00000006)
+    __rt_lib_shutdown_heap_1                 0x000002ff   Thumb Code     0  libshutdown2.o(.ARM.Collect$$libshutdown$$0000000E)
+    __rt_lib_shutdown_return                 0x000002ff   Thumb Code     0  libshutdown2.o(.ARM.Collect$$libshutdown$$0000000F)
+    __rt_lib_shutdown_signal_1               0x000002ff   Thumb Code     0  libshutdown2.o(.ARM.Collect$$libshutdown$$00000009)
+    __rt_lib_shutdown_stdio_1                0x000002ff   Thumb Code     0  libshutdown2.o(.ARM.Collect$$libshutdown$$00000003)
+    __rt_lib_shutdown_user_alloc_1           0x000002ff   Thumb Code     0  libshutdown2.o(.ARM.Collect$$libshutdown$$0000000B)
+    __rt_entry                               0x00000301   Thumb Code     0  rtentry.o(.ARM.Collect$$rtentry$$00000000)
+    __rt_entry_presh_1                       0x00000301   Thumb Code     0  rtentry2.o(.ARM.Collect$$rtentry$$00000002)
+    __rt_entry_sh                            0x00000301   Thumb Code     0  rtentry4.o(.ARM.Collect$$rtentry$$00000004)
+    __rt_entry_li                            0x00000307   Thumb Code     0  rtentry2.o(.ARM.Collect$$rtentry$$0000000A)
+    __rt_entry_postsh_1                      0x00000307   Thumb Code     0  rtentry2.o(.ARM.Collect$$rtentry$$00000009)
+    __rt_entry_main                          0x0000030b   Thumb Code     0  rtentry2.o(.ARM.Collect$$rtentry$$0000000D)
+    __rt_entry_postli_1                      0x0000030b   Thumb Code     0  rtentry2.o(.ARM.Collect$$rtentry$$0000000C)
+    __rt_exit                                0x00000313   Thumb Code     0  rtexit.o(.ARM.Collect$$rtexit$$00000000)
+    __rt_exit_ls                             0x00000315   Thumb Code     0  rtexit2.o(.ARM.Collect$$rtexit$$00000003)
+    __rt_exit_prels_1                        0x00000315   Thumb Code     0  rtexit2.o(.ARM.Collect$$rtexit$$00000002)
+    __rt_exit_exit                           0x00000319   Thumb Code     0  rtexit2.o(.ARM.Collect$$rtexit$$00000004)
+    DisableInterrupts                        0x00000321   Thumb Code     0  startup.o(.text)
+    EnableInterrupts                         0x00000325   Thumb Code     0  startup.o(.text)
+    StartCritical                            0x00000329   Thumb Code     0  startup.o(.text)
+    EndCritical                              0x00000331   Thumb Code     0  startup.o(.text)
+    WaitForInterrupt                         0x00000337   Thumb Code     0  startup.o(.text)
+    __user_initial_stackheap                 0x0000033b   Thumb Code     0  startup.o(.text)
+    writecommand                             0x00000351   Thumb Code     0  lcd.o(.text)
+    writedata                                0x00000377   Thumb Code     0  lcd.o(.text)
+    ADC1_Init                                0x0000039d   Thumb Code   170  texas.o(.text)
+    SetCode                                  0x00000447   Thumb Code    20  texas.o(.text)
+    UART0_Init                               0x0000045b   Thumb Code   162  texas.o(.text)
+    SetCourse                                0x000004fd   Thumb Code    22  texas.o(.text)
+    PLL_Init                                 0x00000513   Thumb Code   118  texas.o(.text)
+    TExaS_Init                               0x00000589   Thumb Code   282  texas.o(.text)
+    StopTimer4                               0x000006a3   Thumb Code    16  texas.o(.text)
+    StartTimer4                              0x000006b3   Thumb Code    24  texas.o(.text)
+    Timer4A_Handler                          0x000006cb   Thumb Code    20  texas.o(.text)
+    ADC1_In                                  0x000006df   Thumb Code     6  texas.o(.text)
+    Timer5A_Handler                          0x000006e5   Thumb Code    34  texas.o(.text)
+    TExaS_Stop                               0x00000707   Thumb Code    18  texas.o(.text)
+    copy                                     0x00000719   Thumb Code    16  texas.o(.text)
+    SetMode                                  0x00000729   Thumb Code    22  texas.o(.text)
+    UART0_InChar                             0x0000073f   Thumb Code    20  texas.o(.text)
+    UART0_InCharNonBlocking                  0x00000753   Thumb Code    22  texas.o(.text)
+    UART0_OutChar                            0x00000769   Thumb Code   200  texas.o(.text)
+    UART0_OutCharNonBlock                    0x00000831   Thumb Code     6  texas.o(.text)
+    __aeabi_memcpy4                          0x0000083d   Thumb Code     0  rt_memcpy_w.o(.text)
+    __aeabi_memcpy8                          0x0000083d   Thumb Code     0  rt_memcpy_w.o(.text)
+    __rt_memcpy_w                            0x0000083d   Thumb Code   100  rt_memcpy_w.o(.text)
+    _memcpy_lastbytes_aligned                0x00000885   Thumb Code     0  rt_memcpy_w.o(.text)
+    __use_two_region_memory                  0x000008a1   Thumb Code     2  heapauxi.o(.text)
+    __rt_heap_escrow$2region                 0x000008a3   Thumb Code     2  heapauxi.o(.text)
+    __rt_heap_expand$2region                 0x000008a5   Thumb Code     2  heapauxi.o(.text)
+    __user_setup_stackheap                   0x000008a7   Thumb Code    74  sys_stackheap_outer.o(.text)
+    exit                                     0x000008f1   Thumb Code    12  exit.o(.text)
+    __user_libspace                          0x000008fd   Thumb Code     8  libspace.o(.text)
+    __user_perproc_libspace                  0x000008fd   Thumb Code     0  libspace.o(.text)
+    __user_perthread_libspace                0x000008fd   Thumb Code     0  libspace.o(.text)
+    _sys_exit                                0x00000905   Thumb Code     8  sys_exit.o(.text)
+    __I$use$semihosting                      0x00000911   Thumb Code     0  use_no_semi.o(.text)
+    __use_no_semihosting_swi                 0x00000911   Thumb Code     2  use_no_semi.o(.text)
+    __semihosting_library_function           0x00000913   Thumb Code     0  indicate_semi.o(.text)
+    ADC_In89                                 0x00000915   Thumb Code    48  adc.o(i.ADC_In89)
+    ADC_Init                                 0x0000094d   Thumb Code   198  adc.o(i.ADC_Init)
+    Arena_Jump                               0x00000a2d   Thumb Code   134  lab9.o(i.Arena_Jump)
+    Arena_Move_Player                        0x00000abd   Thumb Code    30  lab9.o(i.Arena_Move_Player)
+    Battle_Arena                             0x00000add   Thumb Code    88  lab9.o(i.Battle_Arena)
+    Battle_Arena_Collision                   0x00000b4d   Thumb Code   130  lab9.o(i.Battle_Arena_Collision)
+    Battle_Arena_Win                         0x00000bd5   Thumb Code   436  lab9.o(i.Battle_Arena_Win)
+    BulletC_Handler                          0x00000e11   Thumb Code    20  lab9.o(i.BulletC_Handler)
+    Bullet_Arena_Collisions                  0x00000e25   Thumb Code   114  lab9.o(i.Bullet_Arena_Collisions)
+    Bullet_Init                              0x00000e9d   Thumb Code   474  lab9.o(i.Bullet_Init)
+    ButtonC1_Handler                         0x000010cd   Thumb Code    76  lab9.o(i.ButtonC1_Handler)
+    ButtonC2_Handler                         0x00001119   Thumb Code    70  lab9.o(i.ButtonC2_Handler)
+    ButtonC3_Handler                         0x00001165   Thumb Code     2  lab9.o(i.ButtonC3_Handler)
+    Button_Handler                           0x00001169   Thumb Code   106  lab9.o(i.Button_Handler)
+    Button_Init                              0x000011e1   Thumb Code    32  lab9.o(i.Button_Init)
+    Button_Pressed                           0x0000120d   Thumb Code   136  lab9.o(i.Button_Pressed)
+    Change_Button_Bitmap                     0x0000129d   Thumb Code    26  lab9.o(i.Change_Button_Bitmap)
+    Change_Rect                              0x000012c1   Thumb Code    18  lab9.o(i.Change_Rect)
+    Change_Sound                             0x000012d3   Thumb Code    54  lab9.o(i.Change_Sound)
+    Change_Sprite                            0x00001309   Thumb Code    98  lab9.o(i.Change_Sprite)
+    Collision_Checker_Platform               0x00001381   Thumb Code   146  lab9.o(i.Collision_Checker_Platform)
+    Collision_Checker_Sprite                 0x00001429   Thumb Code   138  lab9.o(i.Collision_Checker_Sprite)
+    Collision_Handler_Platform               0x000014bd   Thumb Code   144  lab9.o(i.Collision_Handler_Platform)
+    Collision_Handlers_Sprite                0x0000155d   Thumb Code   134  lab9.o(i.Collision_Handlers_Sprite)
+    Collisions                               0x000015e3   Thumb Code    72  lab9.o(i.Collisions)
+    Colour_Check                             0x0000162b   Thumb Code    56  lab9.o(i.Colour_Check)
+    ControllerButton_Init                    0x00001665   Thumb Code    92  lab9.o(i.ControllerButton_Init)
+    Delay1ms                                 0x000016cd   Thumb Code    32  st7735.o(i.Delay1ms)
+    Draw_Menu                                0x000016ed   Thumb Code    78  lab9.o(i.Draw_Menu)
+    Draw_Rect                                0x0000176d   Thumb Code    30  lab9.o(i.Draw_Rect)
+    Draw_Sprite                              0x0000178b   Thumb Code    30  lab9.o(i.Draw_Sprite)
+    FiFo_Get                                 0x000017a9   Thumb Code    52  fifo.o(i.FiFo_Get)
+    FiFo_Init                                0x000017e9   Thumb Code    12  fifo.o(i.FiFo_Init)
+    FiFo_Put                                 0x000017fd   Thumb Code    62  fifo.o(i.FiFo_Put)
+    FrameRateDelay                           0x00001849   Thumb Code    36  lab9.o(i.FrameRateDelay)
+    Game_Mode                                0x0000186d   Thumb Code    86  lab9.o(i.Game_Mode)
+    Game_Over                                0x000018c5   Thumb Code   172  lab9.o(i.Game_Over)
+    Generate_Level                           0x00001991   Thumb Code   398  lab9.o(i.Generate_Level)
+    Generate_Race                            0x00001b41   Thumb Code   410  lab9.o(i.Generate_Race)
+    Gravity                                  0x00001ced   Thumb Code    32  lab9.o(i.Gravity)
+    Gravity_Check                            0x00001d11   Thumb Code   274  lab9.o(i.Gravity_Check)
+    Gravity_Start                            0x00001e39   Thumb Code    32  lab9.o(i.Gravity_Start)
+    JetPack                                  0x00001e5d   Thumb Code    78  lab9.o(i.JetPack)
+    JetPack_Move                             0x00001ec5   Thumb Code   152  lab9.o(i.JetPack_Move)
+    JetPack_Win                              0x00001f69   Thumb Code   248  lab9.o(i.JetPack_Win)
+    Jump_Player                              0x000020ad   Thumb Code   208  lab9.o(i.Jump_Player)
+    Jump_Reset                               0x00002189   Thumb Code    32  lab9.o(i.Jump_Reset)
+    Level_Init                               0x000021ad   Thumb Code  5726  lab9.o(i.Level_Init)
+    Level_Up                                 0x00003815   Thumb Code   140  lab9.o(i.Level_Up)
+    Main_Menu                                0x000038c9   Thumb Code    48  lab9.o(i.Main_Menu)
+    Move_Bullet                              0x00003905   Thumb Code    94  lab9.o(i.Move_Bullet)
+    Move_Bullet_Arena                        0x00003965   Thumb Code   176  lab9.o(i.Move_Bullet_Arena)
+    Move_Level_Bullets                       0x00003a1d   Thumb Code    68  lab9.o(i.Move_Level_Bullets)
+    Move_Level_Platforms                     0x00003a6d   Thumb Code    68  lab9.o(i.Move_Level_Platforms)
+    Move_Platform                            0x00003abd   Thumb Code   142  lab9.o(i.Move_Platform)
+    Move_Player                              0x00003b55   Thumb Code    48  lab9.o(i.Move_Player)
+    Move_Player_On_Platform                  0x00003b85   Thumb Code    90  lab9.o(i.Move_Player_On_Platform)
+    Next_Level                               0x00003be1   Thumb Code    70  lab9.o(i.Next_Level)
+    Out_Num                                  0x00003c31   Thumb Code    84  lab9.o(i.Out_Num)
+    Pause                                    0x00003c85   Thumb Code    46  lab9.o(i.Pause)
+    Platform_Gravity                         0x00003cc1   Thumb Code   100  lab9.o(i.Platform_Gravity)
+    PlayerC_Handler                          0x00003d25   Thumb Code    72  lab9.o(i.PlayerC_Handler)
+    Player_Init                              0x00003d6d   Thumb Code    50  lab9.o(i.Player_Init)
+    PortF_Init                               0x00003dad   Thumb Code    86  lab9.o(i.PortF_Init)
+    Puzzle_Mode                              0x00003e11   Thumb Code    88  lab9.o(i.Puzzle_Mode)
+    Race                                     0x00003e89   Thumb Code   182  lab9.o(i.Race)
+    Race_Move                                0x00003f6d   Thumb Code    86  lab9.o(i.Race_Move)
+    Race_Over                                0x00003fc5   Thumb Code   266  lab9.o(i.Race_Over)
+    Reset                                    0x00004125   Thumb Code    76  lab9.o(i.Reset)
+    Reset_Bullets                            0x00004175   Thumb Code    54  lab9.o(i.Reset_Bullets)
+    Reset_Players                            0x000041b9   Thumb Code    28  lab9.o(i.Reset_Players)
+    Return_To_Main_Menu                      0x000041dd   Thumb Code   108  lab9.o(i.Return_To_Main_Menu)
+    ST7735_DrawBitmap                        0x00004265   Thumb Code   280  st7735.o(i.ST7735_DrawBitmap)
+    ST7735_DrawCharS                         0x00004385   Thumb Code   232  st7735.o(i.ST7735_DrawCharS)
+    ST7735_DrawPixel                         0x00004479   Thumb Code    64  st7735.o(i.ST7735_DrawPixel)
+    ST7735_DrawString                        0x000044c1   Thumb Code    84  st7735.o(i.ST7735_DrawString)
+    ST7735_FillRect                          0x00004515   Thumb Code   164  st7735.o(i.ST7735_FillRect)
+    ST7735_FillScreen                        0x000045c1   Thumb Code    28  st7735.o(i.ST7735_FillScreen)
+    ST7735_InitR                             0x000045e5   Thumb Code    90  st7735.o(i.ST7735_InitR)
+    ST7735_OutChar                           0x00004661   Thumb Code   176  st7735.o(i.ST7735_OutChar)
+    ST7735_OutString                         0x00004735   Thumb Code    22  st7735.o(i.ST7735_OutString)
+    ST7735_SetCursor                         0x0000474d   Thumb Code    22  st7735.o(i.ST7735_SetCursor)
+    SpriteRect_Collision                     0x0000476d   Thumb Code    86  lab9.o(i.SpriteRect_Collision)
+    Sprite_Collision                         0x000047c3   Thumb Code   104  lab9.o(i.Sprite_Collision)
+    Sprite_Gravity                           0x0000482b   Thumb Code   104  lab9.o(i.Sprite_Gravity)
+    Sprite_Init                              0x00004895   Thumb Code   736  lab9.o(i.Sprite_Init)
+    Swap_Player                              0x00004c01   Thumb Code    58  lab9.o(i.Swap_Player)
+    SysTick_Disable                          0x00004c49   Thumb Code    10  lab9.o(i.SysTick_Disable)
+    SysTick_Enable                           0x00004c55   Thumb Code    40  lab9.o(i.SysTick_Enable)
+    SysTick_Handler                          0x00004c85   Thumb Code    46  lab9.o(i.SysTick_Handler)
+    SysTick_Init                             0x00004cbd   Thumb Code    40  lab9.o(i.SysTick_Init)
+    UART1_Handler                            0x00004ced   Thumb Code    50  uart.o(i.UART1_Handler)
+    UART_InChar                              0x00004d2d   Thumb Code    20  uart.o(i.UART_InChar)
+    UART_Init                                0x00004d45   Thumb Code   206  uart.o(i.UART_Init)
+    UART_OutChar                             0x00004e2d   Thumb Code    18  uart.o(i.UART_OutChar)
+    Update_Battle_Arena                      0x00004e45   Thumb Code   318  lab9.o(i.Update_Battle_Arena)
+    Update_Battle_Menu                       0x00004fa1   Thumb Code   134  lab9.o(i.Update_Battle_Menu)
+    Update_Menu                              0x0000503d   Thumb Code   134  lab9.o(i.Update_Menu)
+    Update_Race                              0x000050d9   Thumb Code   132  lab9.o(i.Update_Race)
+    Update_Stage                             0x00005171   Thumb Code    12  lab9.o(i.Update_Stage)
+    Victory_Screen                           0x0000517d   Thumb Code   212  lab9.o(i.Victory_Screen)
+    jump                                     0x00005455   Thumb Code    54  lab9.o(i.jump)
+    mPlatformC_Handler                       0x00005491   Thumb Code   182  lab9.o(i.mPlatformC_Handler)
+    main                                     0x00005559   Thumb Code   126  lab9.o(i.main)
+    rand                                     0x00005601   Thumb Code    52  lab9.o(i.rand)
+    xAxis_Move                               0x000056b1   Thumb Code   192  lab9.o(i.xAxis_Move)
+    xAxis_Move_Arena                         0x00005781   Thumb Code   160  lab9.o(i.xAxis_Move_Arena)
+    dBfs                                     0x00005e0e   Data         512  st7735.o(.constdata)
+    BulletBill                               0x00006010   Data         168  lab9.o(.constdata)
+    BulletBill2                              0x000060b8   Data         168  lab9.o(.constdata)
+    HorizontalPlatform                       0x00006160   Data        1248  lab9.o(.constdata)
+    VerticalPlatform                         0x00006640   Data        1248  lab9.o(.constdata)
+    BlueBoyLeft                              0x00006b20   Data         336  lab9.o(.constdata)
+    BlueBoyRight                             0x00006c70   Data         336  lab9.o(.constdata)
+    BlueJumpNoTop                            0x00006dc0   Data         408  lab9.o(.constdata)
+    BlueJumpNoBottom                         0x00006f58   Data         408  lab9.o(.constdata)
+    RedGirlLeft                              0x000070f0   Data         336  lab9.o(.constdata)
+    RedGirlRight                             0x00007240   Data         336  lab9.o(.constdata)
+    RedJumpNoBottom                          0x00007390   Data         408  lab9.o(.constdata)
+    RedJumpNoTop                             0x00007528   Data         408  lab9.o(.constdata)
+    arrowBitmap                              0x000076c0   Data         210  lab9.o(.constdata)
+    ButtonPressed                            0x00007792   Data         168  lab9.o(.constdata)
+    ButtonUnpressed                          0x0000783a   Data         168  lab9.o(.constdata)
+    jumpArr                                  0x000078e2   Data          19  lab9.o(.constdata)
+    InputPortMsg                             0x00007e30   Data          40  texas.o(.constdata)
+    OutputPortMsg                            0x00007e58   Data          40  texas.o(.constdata)
+    BlankMsg                                 0x00007e80   Data          40  texas.o(.constdata)
+    InitializedMsg                           0x00007ea8   Data          40  texas.o(.constdata)
+    IntroMsg                                 0x00007ed0   Data          40  texas.o(.constdata)
+    DoneMsg                                  0x00007ef8   Data          40  texas.o(.constdata)
+    Region$$Table$$Base                      0x00007f20   Number         0  anon$$obj.o(Region$$Table)
+    Region$$Table$$Limit                     0x00007f40   Number         0  anon$$obj.o(Region$$Table)
+    StX                                      0x20000000   Data           4  st7735.o(.data)
+    StY                                      0x20000004   Data           4  st7735.o(.data)
+    StTextColor                              0x20000008   Data           2  st7735.o(.data)
+    lastj                                    0x20000010   Data           4  st7735.o(.data)
+    Messageindex                             0x20000018   Data           4  st7735.o(.data)
+    Ymax                                     0x2000001c   Data           4  st7735.o(.data)
+    Ymin                                     0x20000020   Data           4  st7735.o(.data)
+    X                                        0x20000024   Data           4  st7735.o(.data)
+    Yrange                                   0x20000028   Data           4  st7735.o(.data)
+    heartbeat                                0x2000002c   Data           4  lab9.o(.data)
+    M                                        0x20000030   Data           1  lab9.o(.data)
+    gameOverFlag                             0x20000031   Data           1  lab9.o(.data)
+    ADCStatus                                0x20000034   Data           4  lab9.o(.data)
+    buttonFlag                               0x20000038   Data           1  lab9.o(.data)
+    race                                     0x20000039   Data           1  lab9.o(.data)
+    lfsr                                     0x2000003a   Data           2  lab9.o(.data)
+    gameTimer                                0x2000003c   Data           4  lab9.o(.data)
+    ADCData                                  0x20000040   Data           8  lab9.o(.data)
+    selectionButton                          0x20000048   Data           1  lab9.o(.data)
+    currentSelected                          0x20000049   Data           1  lab9.o(.data)
+    pause                                    0x2000004a   Data           1  lab9.o(.data)
+    lSpritesSize                             0x2000004b   Data           1  lab9.o(.data)
+    pauseStatus                              0x2000004c   Data           1  lab9.o(.data)
+    Button_Flag                              0x2000004d   Data           1  lab9.o(.data)
+    cLevel                                   0x2000004e   Data           1  lab9.o(.data)
+    cStage                                   0x2000004f   Data           1  lab9.o(.data)
+    Right                                    0x20000050   Data           8  lab9.o(.data)
+    Left                                     0x20000058   Data           8  lab9.o(.data)
+    JumpUp                                   0x20000060   Data           8  lab9.o(.data)
+    JumpDown                                 0x20000068   Data           8  lab9.o(.data)
+    jetPackRects                             0x20000070   Data           4  lab9.o(.data)
+    battleArenaRacts                         0x20000074   Data           4  lab9.o(.data)
+    jetPackBullets                           0x20000078   Data           4  lab9.o(.data)
+    battleArenaBullets                       0x2000007c   Data           4  lab9.o(.data)
+    Data                                     0x20000080   Data           4  lab9.o(.data)
+    Position                                 0x20000084   Data           4  lab9.o(.data)
+    selectionButtonR                         0x20000088   Data           1  lab9.o(.data)
+    currentSelectedR                         0x20000089   Data           1  lab9.o(.data)
+    raceRects                                0x2000008c   Data           4  lab9.o(.data)
+    raceMenu                                 0x20000090   Data           1  lab9.o(.data)
+    bit                                      0x20000094   Data           4  lab9.o(.data)
+    battleArena                              0x20000098   Data           1  lab9.o(.data)
+    battleMenu                               0x20000099   Data           1  lab9.o(.data)
+    selectionButtonB                         0x2000009a   Data           1  lab9.o(.data)
+    currentSelectedB                         0x2000009b   Data           1  lab9.o(.data)
+    TExaS_Period                             0x200000a0   Data           4  texas.o(.data)
+    TExaS_Ports                              0x200000a4   Data           8  texas.o(.data)
+    TExaS_Meter                              0x200000ac   Data           4  texas.o(.data)
+    ADCnum                                   0x200000b0   Data           4  texas.o(.data)
+    LastMode                                 0x200000b4   Data           4  texas.o(.data)
+    bFlag                                    0x200000b8   Data           4  texas.o(.data)
+    Count                                    0x200000bc   Data           4  texas.o(.data)
+    DelayBetweenTests                        0x200000c0   Data           4  texas.o(.data)
+    TExaS_Test                               0x200000c4   Data           4  texas.o(.data)
+    ScopeMode                                0x200000c8   Data           4  texas.o(.data)
+    ScopeCount                               0x200000cc   Data           4  texas.o(.data)
+    levelSprites                             0x200000d0   Data          80  lab9.o(.bss)
+    arrowSprite                              0x20000120   Data          16  lab9.o(.bss)
+    BlueBoyRightSprite                       0x20000130   Data          16  lab9.o(.bss)
+    BlueBoyLeftSprite                        0x20000140   Data          16  lab9.o(.bss)
+    BlueBoyJumpUpSprite                      0x20000150   Data          16  lab9.o(.bss)
+    BlueBoyJumpDownSprite                    0x20000160   Data          16  lab9.o(.bss)
+    RedGirlRightSprite                       0x20000170   Data          16  lab9.o(.bss)
+    RedGirlLeftSprite                        0x20000180   Data          16  lab9.o(.bss)
+    RedGirlJumpUpSprite                      0x20000190   Data          16  lab9.o(.bss)
+    RedGirlJumpDownSprite                    0x200001a0   Data          16  lab9.o(.bss)
+    mPlatform000                             0x200001b0   Data          16  lab9.o(.bss)
+    mPlatform010                             0x200001c0   Data          16  lab9.o(.bss)
+    mPlatform020                             0x200001d0   Data          16  lab9.o(.bss)
+    mPlatform0201                            0x200001e0   Data          16  lab9.o(.bss)
+    mPlatform030                             0x200001f0   Data          16  lab9.o(.bss)
+    mPlatform0301                            0x20000200   Data          16  lab9.o(.bss)
+    mPlatform0302                            0x20000210   Data          16  lab9.o(.bss)
+    mPlatform100                             0x20000220   Data          16  lab9.o(.bss)
+    mPlatform1001                            0x20000230   Data          16  lab9.o(.bss)
+    mPlatform1002                            0x20000240   Data          16  lab9.o(.bss)
+    mPlatform110                             0x20000250   Data          16  lab9.o(.bss)
+    mPlatform1101                            0x20000260   Data          16  lab9.o(.bss)
+    mPlatform1102                            0x20000270   Data          16  lab9.o(.bss)
+    button010                                0x20000280   Data          16  lab9.o(.bss)
+    button0101                               0x20000290   Data          16  lab9.o(.bss)
+    button020                                0x200002a0   Data          16  lab9.o(.bss)
+    button0201                               0x200002b0   Data          16  lab9.o(.bss)
+    button030                                0x200002c0   Data          16  lab9.o(.bss)
+    button0301                               0x200002d0   Data          16  lab9.o(.bss)
+    button100                                0x200002e0   Data          16  lab9.o(.bss)
+    button1001                               0x200002f0   Data          16  lab9.o(.bss)
+    button1002                               0x20000300   Data          16  lab9.o(.bss)
+    button1003                               0x20000310   Data          16  lab9.o(.bss)
+    button1004                               0x20000320   Data          16  lab9.o(.bss)
+    jp00                                     0x20000330   Data          16  lab9.o(.bss)
+    jp01                                     0x20000340   Data          16  lab9.o(.bss)
+    jp02                                     0x20000350   Data          16  lab9.o(.bss)
+    jp03                                     0x20000360   Data          16  lab9.o(.bss)
+    jp04                                     0x20000370   Data          16  lab9.o(.bss)
+    jp05                                     0x20000380   Data          16  lab9.o(.bss)
+    jp06                                     0x20000390   Data          16  lab9.o(.bss)
+    jp07                                     0x200003a0   Data          16  lab9.o(.bss)
+    jp08                                     0x200003b0   Data          16  lab9.o(.bss)
+    jp09                                     0x200003c0   Data          16  lab9.o(.bss)
+    bab00                                    0x200003d0   Data          16  lab9.o(.bss)
+    bab01                                    0x200003e0   Data          16  lab9.o(.bss)
+    bab02                                    0x200003f0   Data          16  lab9.o(.bss)
+    bab03                                    0x20000400   Data          16  lab9.o(.bss)
+    bullet010                                0x20000410   Data          16  lab9.o(.bss)
+    Player1                                  0x20000420   Data          20  lab9.o(.bss)
+    Player2                                  0x20000434   Data          20  lab9.o(.bss)
+    Levels                                   0x20000448   Data         256  lab9.o(.bss)
+    Time_Levels                              0x20000548   Data          80  lab9.o(.bss)
+    Special_Levels                           0x20000598   Data          80  lab9.o(.bss)
+    r00                                      0x200005e8   Data         302  lab9.o(.bss)
+    r01                                      0x20000716   Data         302  lab9.o(.bss)
+    r02                                      0x20000844   Data         302  lab9.o(.bss)
+    r03                                      0x20000972   Data         302  lab9.o(.bss)
+    r10                                      0x20000aa0   Data         302  lab9.o(.bss)
+    r11                                      0x20000bce   Data         302  lab9.o(.bss)
+    r12                                      0x20000cfc   Data         302  lab9.o(.bss)
+    r13                                      0x20000e2a   Data         302  lab9.o(.bss)
+    r20                                      0x20000f58   Data         302  lab9.o(.bss)
+    r21                                      0x20001086   Data         302  lab9.o(.bss)
+    r22                                      0x200011b4   Data         302  lab9.o(.bss)
+    r23                                      0x200012e2   Data         302  lab9.o(.bss)
+    raceR                                    0x20001410   Data         302  lab9.o(.bss)
+    jpR                                      0x2000153e   Data         302  lab9.o(.bss)
+    baR                                      0x2000166c   Data         302  lab9.o(.bss)
+    b00                                      0x2000179c   Data          44  lab9.o(.bss)
+    b01                                      0x200017c8   Data          44  lab9.o(.bss)
+    b02                                      0x200017f4   Data          44  lab9.o(.bss)
+    b03                                      0x20001820   Data          44  lab9.o(.bss)
+    b10                                      0x2000184c   Data          44  lab9.o(.bss)
+    b11                                      0x20001878   Data          44  lab9.o(.bss)
+    b12                                      0x200018a4   Data          44  lab9.o(.bss)
+    b13                                      0x200018d0   Data          44  lab9.o(.bss)
+    b20                                      0x200018fc   Data          44  lab9.o(.bss)
+    b21                                      0x20001928   Data          44  lab9.o(.bss)
+    b22                                      0x20001954   Data          44  lab9.o(.bss)
+    b23                                      0x20001980   Data          44  lab9.o(.bss)
+    p00                                      0x200019ac   Data          44  lab9.o(.bss)
+    p01                                      0x200019d8   Data          44  lab9.o(.bss)
+    p02                                      0x20001a04   Data          44  lab9.o(.bss)
+    p03                                      0x20001a30   Data          44  lab9.o(.bss)
+    p10                                      0x20001a5c   Data          44  lab9.o(.bss)
+    p11                                      0x20001a88   Data          44  lab9.o(.bss)
+    p12                                      0x20001ab4   Data          44  lab9.o(.bss)
+    p13                                      0x20001ae0   Data          44  lab9.o(.bss)
+    p20                                      0x20001b0c   Data          44  lab9.o(.bss)
+    p21                                      0x20001b38   Data          44  lab9.o(.bss)
+    p22                                      0x20001b64   Data          44  lab9.o(.bss)
+    p23                                      0x20001b90   Data          44  lab9.o(.bss)
+    Bu00                                     0x20001bbc   Data          44  lab9.o(.bss)
+    Bu01                                     0x20001be8   Data          44  lab9.o(.bss)
+    Bu02                                     0x20001c14   Data          44  lab9.o(.bss)
+    Bu03                                     0x20001c40   Data          44  lab9.o(.bss)
+    Bu10                                     0x20001c6c   Data          44  lab9.o(.bss)
+    Bu11                                     0x20001c98   Data          44  lab9.o(.bss)
+    Bu12                                     0x20001cc4   Data          44  lab9.o(.bss)
+    Bu13                                     0x20001cf0   Data          44  lab9.o(.bss)
+    Bu20                                     0x20001d1c   Data          44  lab9.o(.bss)
+    Bu21                                     0x20001d48   Data          44  lab9.o(.bss)
+    Bu22                                     0x20001d74   Data          44  lab9.o(.bss)
+    Bu23                                     0x20001da0   Data          44  lab9.o(.bss)
+    jpB                                      0x20001dcc   Data          44  lab9.o(.bss)
+    baB                                      0x20001df8   Data          44  lab9.o(.bss)
+    TopBorder                                0x20001e24   Data          10  lab9.o(.bss)
+    LeftBorder                               0x20001e2e   Data          10  lab9.o(.bss)
+    RightBorder                              0x20001e38   Data          10  lab9.o(.bss)
+    LevelBullet010                           0x20001e44   Data          12  lab9.o(.bss)
+    jpb00                                    0x20001e50   Data          12  lab9.o(.bss)
+    jpb01                                    0x20001e5c   Data          12  lab9.o(.bss)
+    jpb02                                    0x20001e68   Data          12  lab9.o(.bss)
+    jpb03                                    0x20001e74   Data          12  lab9.o(.bss)
+    jpb04                                    0x20001e80   Data          12  lab9.o(.bss)
+    jpb05                                    0x20001e8c   Data          12  lab9.o(.bss)
+    jpb06                                    0x20001e98   Data          12  lab9.o(.bss)
+    jpb07                                    0x20001ea4   Data          12  lab9.o(.bss)
+    jpb08                                    0x20001eb0   Data          12  lab9.o(.bss)
+    jpb09                                    0x20001ebc   Data          12  lab9.o(.bss)
+    ba00                                     0x20001ec8   Data          12  lab9.o(.bss)
+    ba01                                     0x20001ed4   Data          12  lab9.o(.bss)
+    ba02                                     0x20001ee0   Data          12  lab9.o(.bss)
+    ba03                                     0x20001eec   Data          12  lab9.o(.bss)
+    levelmPlatform000                        0x20001ef8   Data          12  lab9.o(.bss)
+    levelmPlatform010                        0x20001f04   Data          12  lab9.o(.bss)
+    levelmPlatform020                        0x20001f10   Data          12  lab9.o(.bss)
+    levelmPlatform0201                       0x20001f1c   Data          12  lab9.o(.bss)
+    levelmPlatform030                        0x20001f28   Data          12  lab9.o(.bss)
+    levelmPlatform0301                       0x20001f34   Data          12  lab9.o(.bss)
+    levelmPlatform0302                       0x20001f40   Data          12  lab9.o(.bss)
+    levelmPlatform100                        0x20001f4c   Data          12  lab9.o(.bss)
+    levelmPlatform1001                       0x20001f58   Data          12  lab9.o(.bss)
+    levelmPlatform1002                       0x20001f64   Data          12  lab9.o(.bss)
+    levelButton010                           0x20001f70   Data          12  lab9.o(.bss)
+    levelButton0101                          0x20001f7c   Data          12  lab9.o(.bss)
+    levelButton020                           0x20001f88   Data          12  lab9.o(.bss)
+    levelButton0201                          0x20001f94   Data          12  lab9.o(.bss)
+    levelButton030                           0x20001fa0   Data          12  lab9.o(.bss)
+    levelButton0301                          0x20001fac   Data          12  lab9.o(.bss)
+    levelButton0302                          0x20001fb8   Data          12  lab9.o(.bss)
+    levelButton100                           0x20001fc4   Data          12  lab9.o(.bss)
+    levelButton1001                          0x20001fd0   Data          12  lab9.o(.bss)
+    levelButton1002                          0x20001fdc   Data          12  lab9.o(.bss)
+    TExaS                                    0x20002000   Data          56  texas.o(.bss)
+    __libspace_start                         0x20002038   Data          96  libspace.o(.bss)
+    __temporary_stack_top$libspace           0x20002098   Data           0  libspace.o(.bss)
+
+
+
+==============================================================================
+
+Memory Map of the image
+
+  Image Entry point : 0x0000026d
+
+  Load Region LR_1 (Base: 0x00000000, Size: 0x00008010, Max: 0xffffffff, ABSOLUTE)
+
+    Execution Region ER_RO (Base: 0x00000000, Size: 0x00007f40, Max: 0xffffffff, ABSOLUTE)
+
+    Base Addr    Size         Type   Attr      Idx    E Section Name        Object
+
+    0x00000000   0x00000284   Code   RO            3  * RESET               startup.o
+    0x00000284   0x00000008   Code   RO          938  * !!!main             c_w.l(__main.o)
+    0x0000028c   0x00000034   Code   RO         1092    !!!scatter          c_w.l(__scatter.o)
+    0x000002c0   0x0000001a   Code   RO         1094    !!handler_copy      c_w.l(__scatter_copy.o)
+    0x000002da   0x00000002   PAD
+    0x000002dc   0x0000001c   Code   RO         1096    !!handler_zi        c_w.l(__scatter_zi.o)
+    0x000002f8   0x00000002   Code   RO          965    .ARM.Collect$$libinit$$00000000  c_w.l(libinit.o)
+    0x000002fa   0x00000000   Code   RO          972    .ARM.Collect$$libinit$$00000002  c_w.l(libinit2.o)
+    0x000002fa   0x00000000   Code   RO          975    .ARM.Collect$$libinit$$00000008  c_w.l(libinit2.o)
+    0x000002fa   0x00000000   Code   RO          977    .ARM.Collect$$libinit$$0000000A  c_w.l(libinit2.o)
+    0x000002fa   0x00000000   Code   RO          979    .ARM.Collect$$libinit$$0000000C  c_w.l(libinit2.o)
+    0x000002fa   0x00000000   Code   RO          982    .ARM.Collect$$libinit$$0000000F  c_w.l(libinit2.o)
+    0x000002fa   0x00000000   Code   RO          984    .ARM.Collect$$libinit$$00000011  c_w.l(libinit2.o)
+    0x000002fa   0x00000000   Code   RO          986    .ARM.Collect$$libinit$$00000013  c_w.l(libinit2.o)
+    0x000002fa   0x00000000   Code   RO          988    .ARM.Collect$$libinit$$00000015  c_w.l(libinit2.o)
+    0x000002fa   0x00000000   Code   RO          990    .ARM.Collect$$libinit$$00000017  c_w.l(libinit2.o)
+    0x000002fa   0x00000000   Code   RO          992    .ARM.Collect$$libinit$$00000019  c_w.l(libinit2.o)
+    0x000002fa   0x00000000   Code   RO          994    .ARM.Collect$$libinit$$0000001B  c_w.l(libinit2.o)
+    0x000002fa   0x00000000   Code   RO          996    .ARM.Collect$$libinit$$0000001D  c_w.l(libinit2.o)
+    0x000002fa   0x00000000   Code   RO          998    .ARM.Collect$$libinit$$0000001F  c_w.l(libinit2.o)
+    0x000002fa   0x00000000   Code   RO         1000    .ARM.Collect$$libinit$$00000021  c_w.l(libinit2.o)
+    0x000002fa   0x00000000   Code   RO         1002    .ARM.Collect$$libinit$$00000023  c_w.l(libinit2.o)
+    0x000002fa   0x00000000   Code   RO         1006    .ARM.Collect$$libinit$$0000002A  c_w.l(libinit2.o)
+    0x000002fa   0x00000000   Code   RO         1008    .ARM.Collect$$libinit$$0000002C  c_w.l(libinit2.o)
+    0x000002fa   0x00000000   Code   RO         1010    .ARM.Collect$$libinit$$0000002E  c_w.l(libinit2.o)
+    0x000002fa   0x00000000   Code   RO         1012    .ARM.Collect$$libinit$$00000030  c_w.l(libinit2.o)
+    0x000002fa   0x00000002   Code   RO         1013    .ARM.Collect$$libinit$$00000031  c_w.l(libinit2.o)
+    0x000002fc   0x00000002   Code   RO         1033    .ARM.Collect$$libshutdown$$00000000  c_w.l(libshutdown.o)
+    0x000002fe   0x00000000   Code   RO         1047    .ARM.Collect$$libshutdown$$00000003  c_w.l(libshutdown2.o)
+    0x000002fe   0x00000000   Code   RO         1050    .ARM.Collect$$libshutdown$$00000006  c_w.l(libshutdown2.o)
+    0x000002fe   0x00000000   Code   RO         1053    .ARM.Collect$$libshutdown$$00000009  c_w.l(libshutdown2.o)
+    0x000002fe   0x00000000   Code   RO         1055    .ARM.Collect$$libshutdown$$0000000B  c_w.l(libshutdown2.o)
+    0x000002fe   0x00000000   Code   RO         1058    .ARM.Collect$$libshutdown$$0000000E  c_w.l(libshutdown2.o)
+    0x000002fe   0x00000002   Code   RO         1059    .ARM.Collect$$libshutdown$$0000000F  c_w.l(libshutdown2.o)
+    0x00000300   0x00000000   Code   RO          940    .ARM.Collect$$rtentry$$00000000  c_w.l(rtentry.o)
+    0x00000300   0x00000000   Code   RO          942    .ARM.Collect$$rtentry$$00000002  c_w.l(rtentry2.o)
+    0x00000300   0x00000006   Code   RO          954    .ARM.Collect$$rtentry$$00000004  c_w.l(rtentry4.o)
+    0x00000306   0x00000000   Code   RO          944    .ARM.Collect$$rtentry$$00000009  c_w.l(rtentry2.o)
+    0x00000306   0x00000004   Code   RO          945    .ARM.Collect$$rtentry$$0000000A  c_w.l(rtentry2.o)
+    0x0000030a   0x00000000   Code   RO          947    .ARM.Collect$$rtentry$$0000000C  c_w.l(rtentry2.o)
+    0x0000030a   0x00000008   Code   RO          948    .ARM.Collect$$rtentry$$0000000D  c_w.l(rtentry2.o)
+    0x00000312   0x00000002   Code   RO          969    .ARM.Collect$$rtexit$$00000000  c_w.l(rtexit.o)
+    0x00000314   0x00000000   Code   RO         1015    .ARM.Collect$$rtexit$$00000002  c_w.l(rtexit2.o)
+    0x00000314   0x00000004   Code   RO         1016    .ARM.Collect$$rtexit$$00000003  c_w.l(rtexit2.o)
+    0x00000318   0x00000006   Code   RO         1017    .ARM.Collect$$rtexit$$00000004  c_w.l(rtexit2.o)
+    0x0000031e   0x00000002   PAD
+    0x00000320   0x00000030   Code   RO            4    .text               startup.o
+    0x00000350   0x0000004c   Code   RO           12    .text               lcd.o
+    0x0000039c   0x000004a0   Code   RO          915    .text               texas.o
+    0x0000083c   0x00000064   Code   RO          934    .text               c_w.l(rt_memcpy_w.o)
+    0x000008a0   0x00000006   Code   RO          936    .text               c_w.l(heapauxi.o)
+    0x000008a6   0x0000004a   Code   RO          956    .text               c_w.l(sys_stackheap_outer.o)
+    0x000008f0   0x0000000c   Code   RO          958    .text               c_w.l(exit.o)
+    0x000008fc   0x00000008   Code   RO          966    .text               c_w.l(libspace.o)
+    0x00000904   0x0000000c   Code   RO         1025    .text               c_w.l(sys_exit.o)
+    0x00000910   0x00000002   Code   RO         1036    .text               c_w.l(use_no_semi.o)
+    0x00000912   0x00000000   Code   RO         1038    .text               c_w.l(indicate_semi.o)
+    0x00000912   0x00000002   PAD
+    0x00000914   0x00000038   Code   RO           18    i.ADC_In89          adc.o
+    0x0000094c   0x000000e0   Code   RO           19    i.ADC_Init          adc.o
+    0x00000a2c   0x00000090   Code   RO          346    i.Arena_Jump        lab9.o
+    0x00000abc   0x0000001e   Code   RO          347    i.Arena_Move_Player  lab9.o
+    0x00000ada   0x00000002   PAD
+    0x00000adc   0x00000070   Code   RO          348    i.Battle_Arena      lab9.o
+    0x00000b4c   0x00000088   Code   RO          349    i.Battle_Arena_Collision  lab9.o
+    0x00000bd4   0x0000023c   Code   RO          350    i.Battle_Arena_Win  lab9.o
+    0x00000e10   0x00000014   Code   RO          351    i.BulletC_Handler   lab9.o
+    0x00000e24   0x00000078   Code   RO          352    i.Bullet_Arena_Collisions  lab9.o
+    0x00000e9c   0x00000230   Code   RO          353    i.Bullet_Init       lab9.o
+    0x000010cc   0x0000004c   Code   RO          354    i.ButtonC1_Handler  lab9.o
+    0x00001118   0x0000004c   Code   RO          355    i.ButtonC2_Handler  lab9.o
+    0x00001164   0x00000002   Code   RO          356    i.ButtonC3_Handler  lab9.o
+    0x00001166   0x00000002   PAD
+    0x00001168   0x00000078   Code   RO          357    i.Button_Handler    lab9.o
+    0x000011e0   0x0000002c   Code   RO          358    i.Button_Init       lab9.o
+    0x0000120c   0x00000090   Code   RO          359    i.Button_Pressed    lab9.o
+    0x0000129c   0x00000024   Code   RO          360    i.Change_Button_Bitmap  lab9.o
+    0x000012c0   0x00000012   Code   RO          361    i.Change_Rect       lab9.o
+    0x000012d2   0x00000036   Code   RO          362    i.Change_Sound      lab9.o
+    0x00001308   0x00000078   Code   RO          363    i.Change_Sprite     lab9.o
+    0x00001380   0x000000a8   Code   RO          364    i.Collision_Checker_Platform  lab9.o
+    0x00001428   0x00000094   Code   RO          365    i.Collision_Checker_Sprite  lab9.o
+    0x000014bc   0x000000a0   Code   RO          366    i.Collision_Handler_Platform  lab9.o
+    0x0000155c   0x00000086   Code   RO          367    i.Collision_Handlers_Sprite  lab9.o
+    0x000015e2   0x00000048   Code   RO          368    i.Collisions        lab9.o
+    0x0000162a   0x00000038   Code   RO          369    i.Colour_Check      lab9.o
+    0x00001662   0x00000002   PAD
+    0x00001664   0x00000068   Code   RO          370    i.ControllerButton_Init  lab9.o
+    0x000016cc   0x00000020   Code   RO           43    i.Delay1ms          st7735.o
+    0x000016ec   0x00000080   Code   RO          371    i.Draw_Menu         lab9.o
+    0x0000176c   0x0000001e   Code   RO          372    i.Draw_Rect         lab9.o
+    0x0000178a   0x0000001e   Code   RO          373    i.Draw_Sprite       lab9.o
+    0x000017a8   0x00000040   Code   RO          888    i.FiFo_Get          fifo.o
+    0x000017e8   0x00000014   Code   RO          889    i.FiFo_Init         fifo.o
+    0x000017fc   0x0000004c   Code   RO          890    i.FiFo_Put          fifo.o
+    0x00001848   0x00000024   Code   RO          374    i.FrameRateDelay    lab9.o
+    0x0000186c   0x00000056   Code   RO          375    i.Game_Mode         lab9.o
+    0x000018c2   0x00000002   PAD
+    0x000018c4   0x000000cc   Code   RO          376    i.Game_Over         lab9.o
+    0x00001990   0x000001b0   Code   RO          377    i.Generate_Level    lab9.o
+    0x00001b40   0x000001ac   Code   RO          378    i.Generate_Race     lab9.o
+    0x00001cec   0x00000024   Code   RO          379    i.Gravity           lab9.o
+    0x00001d10   0x00000128   Code   RO          380    i.Gravity_Check     lab9.o
+    0x00001e38   0x00000024   Code   RO          381    i.Gravity_Start     lab9.o
+    0x00001e5c   0x00000068   Code   RO          382    i.JetPack           lab9.o
+    0x00001ec4   0x000000a4   Code   RO          383    i.JetPack_Move      lab9.o
+    0x00001f68   0x00000144   Code   RO          384    i.JetPack_Win       lab9.o
+    0x000020ac   0x000000dc   Code   RO          385    i.Jump_Player       lab9.o
+    0x00002188   0x00000024   Code   RO          386    i.Jump_Reset        lab9.o
+    0x000021ac   0x00001668   Code   RO          387    i.Level_Init        lab9.o
+    0x00003814   0x000000b4   Code   RO          388    i.Level_Up          lab9.o
+    0x000038c8   0x0000003c   Code   RO          389    i.Main_Menu         lab9.o
+    0x00003904   0x0000005e   Code   RO          390    i.Move_Bullet       lab9.o
+    0x00003962   0x00000002   PAD
+    0x00003964   0x000000b8   Code   RO          391    i.Move_Bullet_Arena  lab9.o
+    0x00003a1c   0x00000050   Code   RO          392    i.Move_Level_Bullets  lab9.o
+    0x00003a6c   0x00000050   Code   RO          393    i.Move_Level_Platforms  lab9.o
+    0x00003abc   0x00000098   Code   RO          394    i.Move_Platform     lab9.o
+    0x00003b54   0x00000030   Code   RO          395    i.Move_Player       lab9.o
+    0x00003b84   0x0000005a   Code   RO          396    i.Move_Player_On_Platform  lab9.o
+    0x00003bde   0x00000002   PAD
+    0x00003be0   0x00000050   Code   RO          397    i.Next_Level        lab9.o
+    0x00003c30   0x00000054   Code   RO          398    i.Out_Num           lab9.o
+    0x00003c84   0x0000003c   Code   RO          399    i.Pause             lab9.o
+    0x00003cc0   0x00000064   Code   RO          400    i.Platform_Gravity  lab9.o
+    0x00003d24   0x00000048   Code   RO          401    i.PlayerC_Handler   lab9.o
+    0x00003d6c   0x00000040   Code   RO          402    i.Player_Init       lab9.o
+    0x00003dac   0x00000064   Code   RO          403    i.PortF_Init        lab9.o
+    0x00003e10   0x00000078   Code   RO          404    i.Puzzle_Mode       lab9.o
+    0x00003e88   0x000000e4   Code   RO          405    i.Race              lab9.o
+    0x00003f6c   0x00000056   Code   RO          406    i.Race_Move         lab9.o
+    0x00003fc2   0x00000002   PAD
+    0x00003fc4   0x00000160   Code   RO          407    i.Race_Over         lab9.o
+    0x00004124   0x00000050   Code   RO          409    i.Reset             lab9.o
+    0x00004174   0x00000044   Code   RO          410    i.Reset_Bullets     lab9.o
+    0x000041b8   0x00000024   Code   RO          411    i.Reset_Players     lab9.o
+    0x000041dc   0x00000088   Code   RO          412    i.Return_To_Main_Menu  lab9.o
+    0x00004264   0x00000120   Code   RO           50    i.ST7735_DrawBitmap  st7735.o
+    0x00004384   0x000000f4   Code   RO           52    i.ST7735_DrawCharS  st7735.o
+    0x00004478   0x00000048   Code   RO           55    i.ST7735_DrawPixel  st7735.o
+    0x000044c0   0x00000054   Code   RO           56    i.ST7735_DrawString  st7735.o
+    0x00004514   0x000000ac   Code   RO           57    i.ST7735_FillRect   st7735.o
+    0x000045c0   0x00000024   Code   RO           58    i.ST7735_FillScreen  st7735.o
+    0x000045e4   0x0000007c   Code   RO           60    i.ST7735_InitR      st7735.o
+    0x00004660   0x000000d4   Code   RO           62    i.ST7735_OutChar    st7735.o
+    0x00004734   0x00000016   Code   RO           63    i.ST7735_OutString  st7735.o
+    0x0000474a   0x00000002   PAD
+    0x0000474c   0x00000020   Code   RO           73    i.ST7735_SetCursor  st7735.o
+    0x0000476c   0x00000056   Code   RO          413    i.SpriteRect_Collision  lab9.o
+    0x000047c2   0x00000068   Code   RO          414    i.Sprite_Collision  lab9.o
+    0x0000482a   0x00000068   Code   RO          415    i.Sprite_Gravity    lab9.o
+    0x00004892   0x00000002   PAD
+    0x00004894   0x0000036c   Code   RO          416    i.Sprite_Init       lab9.o
+    0x00004c00   0x00000048   Code   RO          417    i.Swap_Player       lab9.o
+    0x00004c48   0x0000000a   Code   RO          418    i.SysTick_Disable   lab9.o
+    0x00004c52   0x00000002   PAD
+    0x00004c54   0x00000030   Code   RO          419    i.SysTick_Enable    lab9.o
+    0x00004c84   0x00000038   Code   RO          420    i.SysTick_Handler   lab9.o
+    0x00004cbc   0x00000030   Code   RO          421    i.SysTick_Init      lab9.o
+    0x00004cec   0x00000040   Code   RO          309    i.UART1_Handler     uart.o
+    0x00004d2c   0x00000018   Code   RO          310    i.UART_InChar       uart.o
+    0x00004d44   0x000000e8   Code   RO          311    i.UART_Init         uart.o
+    0x00004e2c   0x00000018   Code   RO          312    i.UART_OutChar      uart.o
+    0x00004e44   0x0000015c   Code   RO          422    i.Update_Battle_Arena  lab9.o
+    0x00004fa0   0x0000009c   Code   RO          423    i.Update_Battle_Menu  lab9.o
+    0x0000503c   0x0000009c   Code   RO          424    i.Update_Menu       lab9.o
+    0x000050d8   0x00000098   Code   RO          425    i.Update_Race       lab9.o
+    0x00005170   0x0000000c   Code   RO          426    i.Update_Stage      lab9.o
+    0x0000517c   0x000000fc   Code   RO          427    i.Victory_Screen    lab9.o
+    0x00005278   0x00000056   Code   RO           77    i.commandList       st7735.o
+    0x000052ce   0x00000002   PAD
+    0x000052d0   0x00000184   Code   RO           78    i.commonInit        st7735.o
+    0x00005454   0x0000003c   Code   RO          428    i.jump              lab9.o
+    0x00005490   0x000000c8   Code   RO          429    i.mPlatformC_Handler  lab9.o
+    0x00005558   0x00000094   Code   RO          430    i.main              lab9.o
+    0x000055ec   0x00000012   Code   RO           83    i.pushColor         st7735.o
+    0x000055fe   0x00000002   PAD
+    0x00005600   0x0000003c   Code   RO          431    i.rand              lab9.o
+    0x0000563c   0x00000074   Code   RO           84    i.setAddrWindow     st7735.o
+    0x000056b0   0x000000d0   Code   RO          432    i.xAxis_Move        lab9.o
+    0x00005780   0x000000ac   Code   RO          433    i.xAxis_Move_Arena  lab9.o
+    0x0000582c   0x000007e2   Data   RO           86    .constdata          st7735.o
+    0x0000600e   0x00000002   PAD
+    0x00006010   0x00001e20   Data   RO          435    .constdata          lab9.o
+    0x00007e30   0x000000f0   Data   RO          917    .constdata          texas.o
+    0x00007f20   0x00000020   Data   RO         1090    Region$$Table       anon$$obj.o
+
+
+    Execution Region ER_RW (Base: 0x20000000, Size: 0x000000d0, Max: 0xffffffff, ABSOLUTE)
+
+    Base Addr    Size         Type   Attr      Idx    E Section Name        Object
+
+    0x20000000   0x0000002c   Data   RW           87    .data               st7735.o
+    0x2000002c   0x00000070   Data   RW          436    .data               lab9.o
+    0x2000009c   0x00000002   Data   RW          892    .data               fifo.o
+    0x2000009e   0x00000002   PAD
+    0x200000a0   0x00000030   Data   RW          918    .data               texas.o
+
+
+    Execution Region ER_ZI (Base: 0x200000d0, Size: 0x000023c8, Max: 0xffffffff, ABSOLUTE)
+
+    Base Addr    Size         Type   Attr      Idx    E Section Name        Object
+
+    0x200000d0   0x00001f18   Zero   RW          434    .bss                lab9.o
+    0x20001fe8   0x00000011   Zero   RW          891    .bss                fifo.o
+    0x20001ff9   0x00000007   PAD
+    0x20002000   0x00000038   Zero   RW          916    .bss                texas.o
+    0x20002038   0x00000060   Zero   RW          967    .bss                c_w.l(libspace.o)
+    0x20002098   0x00000000   Zero   RW            2    HEAP                startup.o
+    0x20002098   0x00000400   Zero   RW            1    STACK               startup.o
+
+
+==============================================================================
+
+Image component sizes
+
+
+      Code (inc. data)   RO Data    RW Data    ZI Data      Debug   Object Name
+
+       280         34          0          0          0       5434   adc.o
+       160         34          0          2         17       1790   fifo.o
+     17514       1906       7712        112       7960      58316   lab9.o
+        76         12          0          0          0        228   lcd.o
+      1926        182       2018         44          0      12770   st7735.o
+       692        632          0          0       1024        956   startup.o
+      1184        188        240         48         56      14668   texas.o
+       344         50          0          0          0       2231   uart.o
+
+    ----------------------------------------------------------------------
+     22200       3038      10004        208       9064      96393   Object Totals
+         0          0         32          0          0          0   (incl. Generated)
+        24          0          2          2          7          0   (incl. Padding)
+
+    ----------------------------------------------------------------------
+
+      Code (inc. data)   RO Data    RW Data    ZI Data      Debug   Library Member Name
+
+         8          0          0          0          0         68   __main.o
+        52          8          0          0          0          0   __scatter.o
+        26          0          0          0          0          0   __scatter_copy.o
+        28          0          0          0          0          0   __scatter_zi.o
+        12          0          0          0          0         72   exit.o
+         6          0          0          0          0        152   heapauxi.o
+         0          0          0          0          0          0   indicate_semi.o
+         2          0          0          0          0          0   libinit.o
+         2          0          0          0          0          0   libinit2.o
+         2          0          0          0          0          0   libshutdown.o
+         2          0          0          0          0          0   libshutdown2.o
+         8          4          0          0         96         68   libspace.o
+       100          0          0          0          0         80   rt_memcpy_w.o
+         0          0          0          0          0          0   rtentry.o
+        12          0          0          0          0          0   rtentry2.o
+         6          0          0          0          0          0   rtentry4.o
+         2          0          0          0          0          0   rtexit.o
+        10          0          0          0          0          0   rtexit2.o
+        12          4          0          0          0         68   sys_exit.o
+        74          0          0          0          0         80   sys_stackheap_outer.o
+         2          0          0          0          0         68   use_no_semi.o
+
+    ----------------------------------------------------------------------
+       372         16          0          0         96        656   Library Totals
+         6          0          0          0          0          0   (incl. Padding)
+
+    ----------------------------------------------------------------------
+
+      Code (inc. data)   RO Data    RW Data    ZI Data      Debug   Library Name
+
+       366         16          0          0         96        656   c_w.l
+
+    ----------------------------------------------------------------------
+       372         16          0          0         96        656   Library Totals
+
+    ----------------------------------------------------------------------
+
+==============================================================================
+
+
+      Code (inc. data)   RO Data    RW Data    ZI Data      Debug   
+
+     22572       3054      10004        208       9160      90913   Grand Totals
+     22572       3054      10004        208       9160      90913   ELF Image Totals
+     22572       3054      10004        208          0          0   ROM Totals
+
+==============================================================================
+
+    Total RO  Size (Code + RO Data)                32576 (  31.81kB)
+    Total RW  Size (RW Data + ZI Data)              9368 (   9.15kB)
+    Total ROM Size (Code + RO Data + RW Data)      32784 (  32.02kB)
+
+==============================================================================
+
