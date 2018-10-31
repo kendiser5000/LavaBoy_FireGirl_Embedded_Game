@@ -1,5 +1,0 @@
-Do all learning problems
-Understand frobenius
-Understand BVP
-Understand seperation of variable ansatz
-Understand wave and heat equation
