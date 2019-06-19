@@ -10,3 +10,11 @@ Implemented Game Modes:
 - One Shot One Kill
 - Jet Pack Runner Game
 - Competitive Race/Runner
+
+Structure Examples for Level Creation:
+-rect: {x, y, w, h, colour}
+-LevelRects: {rects[10], size}
+-Sprites: {x, y, *bitmap, width, height, cType}
+-Bullet: {*image, velocity, direction, reset position, end position, 0}
+-mPlatform: {*image, 0, axis, direction, min position, max position, 0, 0, 0}
+-Button {*image, *platform it triggers, 0}
